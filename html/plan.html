@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan With Us</title>
+    <link rel="stylesheet" href="../css/plan.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="./plan.html">Plan Your Trip</a>
+      <a href="#">Destinations</a>
+      <a href="#">Travel Resources</a>
+      <a href="#">Travel Coaching</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <button class="cta">Get Started</button>
+    <button class="burger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="hero">
+    <h1>Plan Your Perfect Trip</h1>
+    <p>Let us help you create unforgettable memories.</p>
+  </div>
+
+    <main class="main-container">
+        <section class="trip-form">
+            <h2>Customize Your Experience</h2>
+            <form id="trip-planner">
+                <label for="destination">Choose Destination:</label>
+                <select id="destination" name="destination">
+                    <option value="safari">Safari</option>
+                    <option value="beach">Beach</option>
+                    <option value="city-tour">City Tour</option>
+                </select>
+
+                <label for="travel-type">Type of Experience:</label>
+                <select id="travel-type" name="travel-type">
+                    <option value="adventure">Adventure</option>
+                    <option value="relaxation">Relaxation</option>
+                    <option value="cultural">Cultural</option>
+                </select>
+
+                <label for="duration">Trip Duration (Days):</label>
+                <input type="number" id="duration" name="duration" min="1" max="30">
+
+                <label for="budget">Budget (USD):</label>
+                <input type="number" id="budget" name="budget" placeholder="e.g., 1000">
+
+                <button type="button" id="plan-button">Plan My Trip</button>
+            </form>
+        </section>
+
+        <section class="suggested-itineraries">
+            <h2>Suggested Itineraries</h2>
+            <div class="itineraries">
+                <div class="itinerary">
+                    <h3>3-Day Safari Adventure</h3>
+                    <p>Explore the wild with guided tours and luxury camping.</p>
+                </div>
+                <div class="itinerary">
+                    <h3>Beach & Culture</h3>
+                    <p>Relax by the ocean and dive into local traditions.</p>
+                </div>
+                <div class="itinerary">
+                    <h3>Luxury Getaway</h3>
+                    <p>Indulge in a premium experience with world-class amenities.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Your Tourism Company. All rights reserved.</p>
+    </footer>
+
+    <script src="../script/plan.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../assets/plan.webp);
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, padding-bottom 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00ff22;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover {
+  color: #00ff22;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* CTA Button */
+.cta {
+  padding: 0.6rem 2rem;
+  font-size: 1.1rem;
+  background-color: #366e1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+}
+
+.cta:hover {
+  background-color: #82e455;
+  transform: scale(1.05);
+}
+
+.cta:active {
+  transform: scale(0.98);
+}
+
+/* Burger Button */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+/* Main Container */
+.main-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Form and Itineraries */
+.trip-form,
+.suggested-itineraries {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-form:hover,
+.suggested-itineraries:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.trip-form h2,
+.suggested-itineraries h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #4CAF50;
+  text-align: center;
+}
+
+/* Form Styles */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+form button:active {
+  transform: translateY(1px);
+}
+
+/* Itineraries Section */
+.itineraries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.itinerary {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itinerary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.itinerary h3 {
+  font-size: 1.2rem;
+  color: #4CAF50;
+  margin-bottom: 0.8rem;
+}
+
+.itinerary p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trip-form,
+  .suggested-itineraries {
+    padding: 1.5rem;
+  }
+
+  .itinerary {
+    padding: 1rem;
+  }
+}
+
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+}

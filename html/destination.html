@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../css/destination.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!-- You can add a logo here -->
+      <img src="../assets/logo.jpg" alt="Logo" />
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="./plan.html">Plan Your Trip</a>
+      <a href="#">Destinations</a>
+      <a href="#">Travel Resources</a>
+      <a href="#">Travel Coaching</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <button class="cta">Get Started</button>
+    <button class="burger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <div class="hero">
+    <h1>Explore Our Destinations</h1>
+    <p>Discover unique places that await your exploration.</p>
+  </div>
+
+
+    <section class="featured-destinations">
+        <h2>Featured Destinations</h2>
+        <div class="carousel">
+            <div class="destination-card">
+                <img src="../assets/plan.webp" alt="Destination 1">
+                <h3>Safari Adventures</h3>
+                <p>Experience breathtaking wildlife and thrilling adventures.</p>
+                <button onclick="viewMore('safari')">View More</button>
+            </div>
+            <div class="destination-card">
+                <img src="../assets/plan.webp" alt="Destination 2">
+                <h3>Beach Escapes</h3>
+                <p>Relax on pristine beaches with crystal clear waters.</p>
+                <button onclick="viewMore('beach')">View More</button>
+            </div>
+            <div class="destination-card">
+              <img src="../assets/plan.webp" alt="Destination 2">
+              <h3>Beach Escapes</h3>
+              <p>Relax on pristine beaches with crystal clear waters.</p>
+              <button onclick="viewMore('beach')">View More</button>
+          </div>
+        </div>
+    </section>
+
+    <section class="destinations-grid">
+        <h2>All Destinations</h2>
+        <div class="grid">
+            <div class="destination-card">
+                <img src="../assets/plan.webp" alt="Destination 3">
+                <h3>Cultural Heritage</h3>
+                <p>Immerse yourself in rich culture and history.</p>
+                <button onclick="viewMore('culture')">Learn More</button>
+            </div>
+            <div class="destination-card">
+                <img src="../assets/plan.webp" alt="Destination 4">
+                <h3>Mountain Treks</h3>
+                <p>Conquer majestic peaks and enjoy scenic views.</p>
+                <button onclick="viewMore('mountains')">Learn More</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="interactive-map">
+        <h2>Interactive Map</h2>
+        <div id="map">
+            <!-- Placeholder for the map -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <p class="company-description">
+                Kikwetu Ventures is dedicated to bringing you the best tourism experiences with a blend of adventure, culture, and relaxation. Explore Africa with us for unforgettable memories!
+            </p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="social-link">
+                    <img src="../assets/facebook.png" alt="Facebook" />
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="social-link">
+                    <img src="../assets/tiktok.png" alt="TikTok" />
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-link">
+                    <img src="../assets/instagram.jpg" alt="Instagram" />
+                </a>
+                <a href="https://wa.me" target="_blank" class="social-link">
+                    <img src="../assets/whatsapp.jpg" alt="WhatsApp" />
+                </a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h4>Contact Us</h4>
+            <p>Location: Nairobi, Kenya</p>
+            <p>Phone: +254 700 123 456</p>
+            <p>Email: info@aquaafrica.com</p>
+        </div>
+    </footer>
+
+    <script src="../script/destination.js"></script>
+</body>
+</html>

@@ -9,7 +9,6 @@
 <body>
   <header>
     <div class="logo">
-      <!-- You can add a logo here -->
       <img src="../assets/logo.jpg" alt="Logo" />
     </div>
     <nav class="nav">
@@ -30,7 +29,7 @@
   </header>
 
   <main>
-    <section>
+    <section class="fade-in">
       <h2>Packing Checklists</h2>
       <ul>
         <li><strong>General Packing List:</strong> Comprehensive checklist to ensure you never forget an essential item.</li>
@@ -40,26 +39,17 @@
       <img src="../assets/packing.jpeg" alt="Packing items neatly organized">
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Budgeting Tools</h2>
       <ul>
         <li><strong>Sample Travel Budgets:</strong> Get a clear picture of typical costs for destinations.</li>
         <li><strong>Currency Converter:</strong> Handy widget to manage finances in any currency.</li>
         <li><strong>Money-Saving Tips:</strong> Discover deals on flights, accommodations, and tours.</li>
       </ul>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/u9hdIwUVx6o?si=e_3l9KWD6xbXQe-T"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+      <img src="../assets/b info.jpeg" alt="Budgeting infographic">
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Health and Safety</h2>
       <ul>
         <li><strong>Vaccination Requirements:</strong> Necessary health precautions for your destination.</li>
@@ -69,7 +59,7 @@
       <img src="../assets/health.webp" alt="Health and safety checklist">
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Transportation Tips</h2>
       <ul>
         <li><strong>Local Transit:</strong> Navigate public transport systems efficiently.</li>
@@ -79,7 +69,7 @@
       <img src="../assets/transportation.jpeg" alt="Transportation options illustration">
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Travel Tech Tools</h2>
       <ul>
         <li><strong>Top Travel Apps:</strong> Apps for navigation, bookings, and language translation.</li>
@@ -89,28 +79,17 @@
       <img src="../assets/gadget.jpeg" alt="Travel gadgets and tools">
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Sustainable Travel Tips</h2>
       <ul>
         <li><strong>Eco-Friendly Practices:</strong> Minimize your environmental impact while exploring.</li>
         <li><strong>Sustainable Stays:</strong> Eco-conscious accommodations and tour operators.</li>
         <li><strong>Carbon Footprint Guides:</strong> Learn how to offset travel emissions effectively.</li>
       </ul>
-      <div>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/eu6_O5941OI?si=oe1YTOCvli6CjmKk"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </div>
+      <img src="../assets/transpo.jpeg" alt="Sustainable travel infographic">
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Frequently Asked Questions (FAQs)</h2>
       <ul>
         <li><strong>Travel Documents:</strong> Answers about passports, visas, and customs processes.</li>
@@ -127,9 +106,52 @@
     </div>
   </main>
 
-  <footer>
-    <!-- Footer content here -->
-    <p>&copy; 2025 Travel Resources. All rights reserved.</p>
-  </footer>
+  <footer class="footer">
+    <div class="footer-left">
+        <p class="company-description">
+            Kikwetu Ventures is dedicated to bringing you the best tourism experiences with a blend of adventure, culture, and relaxation. Explore Africa with us for unforgettable memories!
+        </p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="social-link">
+                <img src="../assets/facebook.png" alt="Facebook" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-link">
+                <img src="../assets/tiktok.png" alt="TikTok" />
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-link">
+                <img src="../assets/instagram.jpg" alt="Instagram" />
+            </a>
+            <a href="https://wa.me" target="_blank" class="social-link">
+                <img src="../assets/whatsapp.jpg" alt="WhatsApp" />
+            </a>
+        </div>
+    </div>
+    <div class="footer-right">
+        <h4>Contact Us</h4>
+        <p>Location: Nairobi, Kenya</p>
+        <p>Phone: +254 700 123 456</p>
+        <p>Email: info@aquaafrica.com</p>
+    </div>
+</footer>
+
+  <script>
+    const sections = document.querySelectorAll('.fade-in');
+    const options = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
+

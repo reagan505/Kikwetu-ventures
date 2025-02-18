@@ -141,87 +141,121 @@ header {
 .hero {
   text-align: center;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: #366e1c;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #555;
+  color: #000000;
 }
 
 
 /* Remaining sections, cards, map, and footer remain unchanged */
 
 
+:root {
+  --primary-color: #366e1c;
+  --primary-hover-color: #0fb300;
+  --text-color-light: #fff2f2;
+  --text-color-dark: #333;
+  --text-color-muted: #666;
+  --card-bg-color: #ffffff;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --padding: 1.5rem;
+}
+
 .featured-destinations,
 .destinations-grid,
 .interactive-map {
-  padding: 1.5rem 1rem;
-  background-color: #366e1c;
+  padding: var(--padding);
+  background-color: var(--primary-color);
   margin: 1.5rem auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   max-width: 100%;
-  width: 95%;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.featured-destinations:hover,
+.destinations-grid:hover,
+.interactive-map:hover {
+  transform: scale(1.02);
 }
 
 h2 {
   text-align: center;
   margin-bottom: 1rem;
-  color: #fff2f2;
+  color: var(--text-color-light);
+  font-size: 2rem;
 }
 
-.carousel, .grid {
+.carousel,
+.grid {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 0.5rem;
 }
 
 .destination-card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   overflow: hidden;
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .destination-card img {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .destination-card h3 {
   margin: 0.8rem 0 0.4rem;
-  color: #333;
+  color: var(--text-color-dark);
+  font-size: 1.25rem;
 }
 
 .destination-card p {
-  padding: 0.5rem;
-  color: #666;
+  padding: 0.5rem 1rem;
+  color: var(--text-color-muted);
+  font-size: 0.9rem;
 }
 
 .destination-card button {
-  margin: 0.8rem 0;
-  padding: 0.4rem 0.8rem;
-  background-color: #366e1c;
-  color: white;
+  margin: 1rem 0;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .destination-card button:hover {
-  background-color: #0fb300;
+  background-color: var(--primary-hover-color);
+  transform: scale(1.05);
 }
+
 
 #map {
   width: 100%;

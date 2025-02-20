@@ -1,18 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Resources</title>
+  <title>Document</title>
   <link rel="stylesheet" href="../css/Resources.css">
 </head>
 <body>
+
   <header>
     <div class="logo">
       <img src="../assets/logo.jpg" alt="Logo" />
     </div>
     <nav class="nav">
-      <a href="index.html">Home</a>
+      <a href="./index.html">Home</a>
       <a href="./plan.html">Plan Your Trip</a>
       <a href="./destination.html">Destinations</a>
       <a href="./Resources.html">Travel Resources</a>
@@ -27,52 +29,83 @@
       <span></span>
     </button>
   </header>
+  <h1>Travel Resources</h1>
 
-  <main>
-    <section class="hero">
-      <img src="../assets/t c.jpeg" alt="Travel adventure" class="hero-img">
-      <div class="hero-overlay">
-        <h1>Travel Coaching</h1>
-        <p>Your Personalized Guide to Unforgettable Experiences</p>
+  <section class="media-gallery">
+    <h2>Travel Inspirations</h2>
+    <div class="media-container">
+      <div class="media-item">
+        <img src="../assets/beach.jpeg" alt="Beautiful beach">
+        <p>Relax on stunning beaches</p>
       </div>
-    </section>
+      <div class="media-item">
+        <img src="../assets/mountain.jpeg" alt="Mountain adventure">
+        <p>Explore majestic mountains</p>
+      </div>
+      <div class="media-item">
+        <img src="../assets/city.jpeg" alt="Vibrant city life">
+        <p>Experience vibrant city life</p>
+      </div>
+      <div class="media-item">
+        <video controls>
+          <source src="videos/safari.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Safari Adventures</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="info">
-      <h2>What is Travel Coaching?</h2>
-      <p>
-        Discover the art of traveling smarter with our Travel Coaching services. Whether you’re planning your first trip
-        or seeking to elevate your travel experiences, our expert coaches are here to help you design journeys that match
-        your style, budget, and dreams. Say goodbye to generic itineraries and hello to personalized adventures.
-      </p>
-    </section>
 
-    <section class="info">
-      <h2>Our Travel Coaching Services</h2>
-      <ul>
-        <li><strong>Personalized Travel Planning:</strong> Tailored itineraries that match your preferences, budget, and interests, with real-time updates on local events.</li>
-        <li><strong>Budget-Friendly Guidance:</strong> Expert tips on cost-saving, travel deals, and creating a budget that works for you.</li>
-        <li><strong>Travel Goal Setting:</strong> Define and achieve your travel dreams, whether it's adventure, cultural immersion, or relaxation.</li>
-        <li><strong>Local Expertise:</strong> Access guides for culture, food, and language tips, plus off-the-beaten-path recommendations.</li>
-        <li><strong>Flexible Coaching Options:</strong> Virtual sessions, on-demand advice, and group coaching for families or teams.</li>
-        <li><strong>Safety and Wellness Support:</strong> Stay safe and healthy with guidance on insurance, precautions, and wellness tips.</li>
-        <li><strong>Eco-Friendly Travel:</strong> Learn sustainable travel practices for a positive environmental impact.</li>
-        <li><strong>Skill Development:</strong> Workshops and tips for solo travelers, families, or those with special needs.</li>
-        <li><strong>Digital Resources:</strong> Access to templates, travel apps, and free downloadable guides.</li>
-        <li><strong>Community Engagement:</strong> Join a vibrant travel community for tips, stories, and events.</li>
+  <div class="container">
+
+    <!-- Budget Calculator Card -->
+    <div class="card fade-in">
+      <h3>Budget Calculator</h3>
+      <div id="budget-calculator">
+        <div class="input-group">
+          <label for="accommodation">Accommodation Cost:</label>
+          <input type="number" id="accommodation" placeholder="Enter cost in KSH">
+        </div>
+        <div class="input-group">
+          <label for="transport">Transport Cost:</label>
+          <input type="number" id="transport" placeholder="Enter cost in KSH">
+        </div>
+        <div class="input-group">
+          <label for="meals">Meals:</label>
+          <input type="number" id="meals" placeholder="Enter cost in KSH">
+        </div>
+        <div class="input-group">
+          <label for="activities">Activities:</label>
+          <input type="number" id="activities" placeholder="Enter cost in KSH">
+        </div>
+        <div class="input-group">
+          <label for="miscellaneous">Miscellaneous:</label>
+          <input type="number" id="miscellaneous" placeholder="Enter cost in KSH">
+        </div>
+        <button class="button" onclick="calculateBudget()">Calculate</button>
+        <p>Total Estimated Cost: <span id="total-cost">0</span> KSH</p>
+      </div>
+    </div>
+
+    <!-- Packing Checklist Card -->
+    <div class="card fade-in">
+      <h3>Packing Checklist</h3>
+      <ul id="checklist">
+        <li><input type="checkbox"> Passport</li>
+        <li><input type="checkbox"> Clothes</li>
+        <li><input type="checkbox"> Toiletries</li>
+        <li><input type="checkbox"> Travel Documents</li>
       </ul>
-    </section>
+      <div class="input-group">
+        <input type="text" id="new-item" placeholder="Add new item">
+      </div>
+      <button class="button" onclick="addItem()">Add Item</button>
+    </div>
 
-    <section class="info">
-      <h2>How It Works</h2>
-      <ul>
-        <li><strong>Step 1:</strong> Free Consultation to discuss your travel goals.</li>
-        <li><strong>Step 2:</strong> Customized Coaching Plan tailored to your needs.</li>
-        <li><strong>Step 3:</strong> Ongoing Support for a seamless experience.</li>
-      </ul>
-      <a href="#" class="cta-button">Schedule Consultation Now</a>
-    </section>
-  </main>
+  </div>
 
+  </div>
 
   <footer class="footer">
     <div class="footer-left">
@@ -101,24 +134,6 @@
         <p>Email: info@aquaafrica.com</p>
     </div>
 </footer>
-
-  <script>
-    const sections = document.querySelectorAll('.fade-in');
-    const options = {
-      threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, options);
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+ <script src="../script/resources.js"></script>
 </body>
 </html>

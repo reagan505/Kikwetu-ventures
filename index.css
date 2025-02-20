@@ -138,14 +138,12 @@ header {
 }
 
 
-
 .carousel-container {
   position: relative;
   max-width: 90%;
   height: 350px;
   overflow: hidden;
   margin: 20px auto;
-  border: 2px solid #ddd;
   border-radius: 12px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -153,7 +151,7 @@ header {
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-item {
@@ -162,6 +160,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .carousel-item img {
@@ -171,25 +172,30 @@ header {
   border-radius: 8px;
 }
 
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
   border: none;
   padding: 12px;
   cursor: pointer;
   border-radius: 50%;
-  font-size: 1.5rem;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-button:hover {
   background-color: rgba(255, 255, 255, 1);
-  color: #000;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -202,24 +208,15 @@ header {
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .carousel-container {
-    height: 250px;
+      height: 250px;
   }
-
   .carousel-button {
-    font-size: 1.2rem;
-    padding: 10px;
+      font-size: 1.2rem;
+      padding: 10px;
   }
 }
+
 
 .best-options {
   padding: 3rem 2rem;
@@ -227,6 +224,13 @@ header {
   text-align: center;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease;
 }
 
 .cards-container {
@@ -235,6 +239,7 @@ header {
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 1rem;
+  animation: slideIn 1.2s ease;
 }
 
 .card {
@@ -244,6 +249,12 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -251,6 +262,27 @@ header {
   height: 180px;
   object-fit: cover;
   border-bottom: 1px solid #e0e0e0;
+}
+
+.card-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.8s ease;
+}
+
+.card-icon .icon {
+  width: 24px;
+  height: 24px;
+  color: #366e1c;
 }
 
 .card-info {
@@ -286,21 +318,58 @@ header {
   transform: scale(1.05);
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+      transform: scale(0);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
 }
 
 .why-choose-us {
   position: relative;
-  background: linear-gradient(transparent,  rgba(0, 0, 0, 0.2)),
-    url('./assets/coaching.jpeg') no-repeat center/cover;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)), url('./assets/coaching.jpeg') no-repeat center/cover;
   padding: 4rem 2rem;
   text-align: center;
   color: #fff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .content-overlay {
@@ -319,6 +388,16 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #82e455;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .icons-container {
@@ -338,6 +417,24 @@ header {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(130, 228, 85, 0.4) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icon-item:hover::before {
+  opacity: 1;
 }
 
 .icon-item:hover {
@@ -345,15 +442,15 @@ header {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.icon-item img {
+.icon-svg {
   width: 70px;
   height: 70px;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
-.icon-item:hover img {
-  transform: scale(1.1);
+.icon-item:hover .icon-svg {
+  transform: rotate(10deg) scale(1.1);
 }
 
 .icon-item h3 {
@@ -404,6 +501,7 @@ header {
     font-size: 1rem;
   }
 }
+
 
 
 .footer {

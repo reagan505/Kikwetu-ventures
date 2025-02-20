@@ -36,55 +36,67 @@
   </div>
 
 
-    <section class="featured-destinations">
-        <h2>Featured Destinations</h2>
-        <div class="carousel">
-            <div class="destination-card">
-                <img src="../assets/plan.webp" alt="Destination 1">
-                <h3>Safari Adventures</h3>
-                <p>Experience breathtaking wildlife and thrilling adventures.</p>
-                <button onclick="viewMore('safari')">View More</button>
-            </div>
-            <div class="destination-card">
-                <img src="../assets/plan.webp" alt="Destination 2">
-                <h3>Beach Escapes</h3>
-                <p>Relax on pristine beaches with crystal clear waters.</p>
-                <button onclick="viewMore('beach')">View More</button>
-            </div>
-            <div class="destination-card">
-              <img src="../assets/plan.webp" alt="Destination 2">
-              <h3>Beach Escapes</h3>
-              <p>Relax on pristine beaches with crystal clear waters.</p>
-              <button onclick="viewMore('beach')">View More</button>
-          </div>
+  <section class="featured-destinations">
+    <h2>Featured Destinations</h2>
+    <div class="carousel">
+        <div class="destination-card">
+            <img src="../assets/plan.webp" alt="Destination 1">
+            <h3>Safari Adventures</h3>
+            <p>Experience breathtaking wildlife and thrilling adventures.</p>
+            <button onclick="viewMore('safari')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-11h-2V7h2zm0 2h-2v5h2z" />
+                </svg>
+                View More
+            </button>
         </div>
-    </section>
-
-    <section class="destinations-grid">
-        <h2>All Destinations</h2>
-        <div class="grid">
-            <div class="destination-card">
-                <img src="../assets/plan.webp" alt="Destination 3">
-                <h3>Cultural Heritage</h3>
-                <p>Immerse yourself in rich culture and history.</p>
-                <button onclick="viewMore('culture')">Learn More</button>
-            </div>
-            <div class="destination-card">
-                <img src="../assets/plan.webp" alt="Destination 4">
-                <h3>Mountain Treks</h3>
-                <p>Conquer majestic peaks and enjoy scenic views.</p>
-                <button onclick="viewMore('mountains')">Learn More</button>
-            </div>
+        <div class="destination-card">
+            <img src="../assets/plan.webp" alt="Destination 2">
+            <h3>Beach Escapes</h3>
+            <p>Relax on pristine beaches with crystal clear waters.</p>
+            <button onclick="viewMore('beach')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor">
+                    <path d="M3 12l5-5 4 4 8-8 3 3v8H3z" />
+                </svg>
+                BOOK NOW
+            </button>
         </div>
+    </div>
+</section>
 
-    </section>
-
-    <section class="interactive-map">
-        <h2>Interactive Map</h2>
-        <div id="map">
-            <!-- Placeholder for the map -->
+<section class="destinations-grid">
+    <h2>All Destinations</h2>
+    <div class="grid">
+        <div class="destination-card">
+            <img src="../assets/plan.webp" alt="Destination 3">
+            <h3>Cultural Heritage</h3>
+            <p>Immerse yourself in rich culture and history.</p>
+            <button onclick="viewMore('culture')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 8.27L4.91 7.5 12 4.73 19.09 7.5 12 10.27z" />
+                </svg>
+                Learn More
+            </button>
         </div>
-    </section>
+        <div class="destination-card">
+            <img src="../assets/plan.webp" alt="Destination 4">
+            <h3>Mountain Treks</h3>
+            <p>Conquer majestic peaks and enjoy scenic views.</p>
+            <button onclick="viewMore('mountains')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor">
+                    <path d="M12 2l9 15H3z" />
+                </svg>
+                Learn More
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="interactive-map">
+    <h2>Interactive Map</h2>
+    <div id="map"></div>
+</section>
+
 
     <footer class="footer">
         <div class="footer-left">

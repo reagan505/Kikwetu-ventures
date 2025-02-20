@@ -158,7 +158,6 @@ header {
 
 /* Remaining sections, cards, map, and footer remain unchanged */
 
-
 :root {
   --primary-color: #366e1c;
   --primary-hover-color: #0fb300;
@@ -256,12 +255,36 @@ h2 {
   transform: scale(1.05);
 }
 
+/* SVG Icon Styles */
+.destination-card button svg {
+  margin-right: 8px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
 
+.destination-card button:hover svg {
+  transform: scale(1.2);
+}
+
+/* Interactive Map */
 #map {
   width: 100%;
-  height: 300px;
-  background-color: #ccc;
+  height: 400px;
+  background: linear-gradient(135deg, #ccc, #eee);
+  border-radius: var(--border-radius);
+  animation: fadeIn 1s ease-in-out;
 }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
 .footer {
   display: flex;

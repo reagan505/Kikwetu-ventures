@@ -11,7 +11,7 @@
             <img src="../assets/logo.jpg" alt="Logo" />
         </div>
         <nav class="nav">
-            <a href="index.html">Home</a>
+            <a href="../index.html">Home</a>
             <a href="./plan.html">Plan Your Trip</a>
             <a href="./destination.html">Destinations</a>
             <a href="./Resources.html">Travel Resources</a>
@@ -33,52 +33,53 @@
     <p>Let us help you create unforgettable memories.</p>
   </div>
 
-    <main class="main-container">
-        <section class="trip-form">
-            <h2>Customize Your Experience</h2>
-            <form id="trip-planner">
-                <label for="destination">Choose Destination:</label>
-                <select id="destination" name="destination">
-                    <option value="safari">Safari</option>
-                    <option value="beach">Beach</option>
-                    <option value="city-tour">City Tour</option>
-                </select>
+  <main class="main-container">
+    <section class="trip-form">
+        <h2>Customize Your Experience</h2>
+        <form id="trip-planner">
+            <label for="destination">Choose Destination:</label>
+            <select id="destination" name="destination">
+                <option value="safari">Safari</option>
+                <option value="beach">Beach</option>
+                <option value="city-tour">City Tour</option>
+            </select>
 
-                <label for="travel-type">Type of Experience:</label>
-                <select id="travel-type" name="travel-type">
-                    <option value="adventure">Adventure</option>
-                    <option value="relaxation">Relaxation</option>
-                    <option value="cultural">Cultural</option>
-                </select>
+            <label for="travel-type">Type of Experience:</label>
+            <select id="travel-type" name="travel-type">
+                <option value="adventure">Adventure</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="cultural">Cultural</option>
+            </select>
 
-                <label for="duration">Trip Duration (Days):</label>
-                <input type="number" id="duration" name="duration" min="1" max="30">
+            <label for="duration">Trip Duration (Days):</label>
+            <input type="number" id="duration" name="duration" min="1" max="30">
 
-                <label for="budget">Budget (USD):</label>
-                <input type="number" id="budget" name="budget" placeholder="e.g., 1000">
+            <button type="button" id="next-button">Next</button>
+        </form>
+    </section>
+</main>
 
-                <button type="button" id="plan-button">Plan My Trip</button>
-            </form>
-        </section>
-
-        <section class="suggested-itineraries">
-            <h2>Suggested Itineraries</h2>
-            <div class="itineraries">
-                <div class="itinerary">
-                    <h3>3-Day Safari Adventure</h3>
-                    <p>Explore the wild with guided tours and luxury camping.</p>
-                </div>
-                <div class="itinerary">
-                    <h3>Beach & Culture</h3>
-                    <p>Relax by the ocean and dive into local traditions.</p>
-                </div>
-                <div class="itinerary">
-                    <h3>Luxury Getaway</h3>
-                    <p>Indulge in a premium experience with world-class amenities.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<section class="suggested-itineraries">
+  <h2>Suggested Itineraries</h2>
+  <canvas id="backgroundCanvas"></canvas>
+  <div class="itineraries">
+      <div class="itinerary">
+          <div class="icon"><img src="../assets/s svg.jpg" alt="Safari Adventure Icon" /></div>
+          <h3>3-Day Safari Adventure</h3>
+          <p>Explore the wild with guided tours and luxury camping.</p>
+      </div>
+      <div class="itinerary">
+          <div class="icon"><img src="../assets/b svg.png" alt="Beach and Culture Icon" /></div>
+          <h3>Beach & Culture</h3>
+          <p>Relax by the ocean and dive into local traditions.</p>
+      </div>
+      <div class="itinerary">
+          <div class="icon"><img src="../assets/l svg.png" alt="Luxury Getaway Icon" /></div>
+          <h3>Luxury Getaway</h3>
+          <p>Indulge in a premium experience with world-class amenities.</p>
+      </div>
+  </div>
+</section>
 
      <footer class="footer">
     <div class="footer-left">

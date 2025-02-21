@@ -21,3 +21,9 @@
         document.getElementById('new-item').value = '';
       }
     }
+
+    document.querySelector('.burger').addEventListener('click', () => {
+      const nav = document.querySelector('.nav');
+      nav.classList.toggle('active');
+  });
+

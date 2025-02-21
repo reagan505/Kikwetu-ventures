@@ -223,7 +223,7 @@ ul li input {
 
 :root {
   --primary-color: #286d31;
-  --secondary-color: #e2dada;
+  --secondary-color: #f5f1f1;
   --text-color: #000000;
   --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   --transition-duration: 0.3s;

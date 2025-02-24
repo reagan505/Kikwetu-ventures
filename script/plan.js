@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Redirect to the next page if fields are valid
         if (destination && travelType && duration) {
-            window.location.href = "Resources.html"; // Replace with the actual URL of the next page
+            window.location.href = "user.html"; // Replace with the actual URL of the next page
         } else {
             // Display an error message
             const form = document.getElementById("trip-planner");

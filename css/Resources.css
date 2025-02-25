@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #4CAF50;
-  --secondary-color: #f9fafb;
+  --primary-color:#366e1c;
+  --secondary-color:#366e1c;
   --text-color: #333;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --transition-duration: 0.4s;
@@ -13,6 +13,7 @@ body {
   background: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
+  background-color: #f4f4f9;
 }
 
 header {
@@ -22,7 +23,7 @@ header {
   padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f4f4f9;
 }
 
 .logo img {
@@ -224,7 +225,7 @@ ul li input {
 :root {
   --primary-color: #286d31;
   --secondary-color: #f5f1f1;
-  --text-color: #000000;
+  --text-color:#366e1c;
   --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   --transition-duration: 0.3s;
 }

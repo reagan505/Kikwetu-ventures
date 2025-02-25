@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #366e1c;
+  background-color: #f4f4f9;
   color: #333;
   line-height: 1.6;
 }
@@ -142,8 +142,8 @@ header {
 .hero {
   text-align: center;
   padding: 2rem;
-  background-color: #366e1c;
-  color: white;
+  background-color: #f4f4f9;
+  color:#366e1c;
 }
 
 .hero h1 {
@@ -153,6 +153,7 @@ header {
 
 .hero p {
   font-size: 1.2rem;
+  color: black;
 }
 
 /* Responsive Design */
@@ -188,7 +189,7 @@ header {
   max-width: 800px;
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
-  color: #333;
+  color:#366e1c;
 }
 
 /* Form and Itineraries */
@@ -209,7 +210,7 @@ header {
 .trip-form h2 {
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
-  color: #4CAF50;
+  color:#366e1c;
   text-align: center;
 }
 
@@ -241,7 +242,7 @@ form select:focus {
 }
 
 form button {
-  background-color: #4CAF50;
+  background-color:#366e1c;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -251,7 +252,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #4CAF50;
   transform: translateY(-2px);
 }
 
@@ -272,18 +273,18 @@ form button:active {
 /* Itineraries Section */
 .suggested-itineraries {
   position: relative;
-  background: linear-gradient(135deg, #30cb11 0%, #204b0c 100%);
+  background: linear-gradient(135deg, #f4f4f9 0%,  #f4f4f9 100%);
   padding: 2rem;
   border-radius: 20px;
   overflow: hidden;
-  color: white;
+  color:#366e1c;
 }
 
 .suggested-itineraries h2 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color:#366e1c;
 }
 
 .itineraries {
@@ -309,7 +310,7 @@ form button:active {
 
 .itinerary h3 {
   font-size: 1.4rem;
-  color: #333;
+  color:#366e1c;
   margin-bottom: 0.8rem;
 }
 
@@ -358,7 +359,7 @@ form button:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #366e1c;
+  background-color:#366e1c;
   color: white;
   padding: 2rem;
   gap: 2rem;

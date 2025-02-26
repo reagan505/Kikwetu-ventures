@@ -53,13 +53,13 @@ header {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #00ff22;
+  background-color: #5faf58;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .nav a:hover {
-  color: #00ff22;
+  color: #5faf58;
 }
 
 .nav a:hover::after {
@@ -79,7 +79,7 @@ header {
 }
 
 .cta:hover {
-  background-color: #82e455;
+  background-color: #5faf58;
   transform: scale(1.05);
 }
 
@@ -156,20 +156,20 @@ header {
 }
 
 
-/* Remaining sections, cards, map, and footer remain unchanged */
 
 :root {
-  --primary-color: #f4f4f9;
-  --primary-hover-color: #0fb300;
-  --text-color-light:#366e1c;
-  --text-color-dark:#366e1c;
-  --text-color-muted: #666;
-  --card-bg-color: #ffffff;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --border-radius: 12px;
-  --padding: 1.5rem;
+  --primary-color: #f4f4f9; /* Background color for primary areas */
+  --hover-color: #5faf58; /* Accent color for hover states */
+  --text-color: #366e1c; /* Unified text color */
+  --muted-color: #666; /* Muted text for descriptions */
+  --card-bg: #ffffff; /* Card background color */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
+  --border-radius: 12px; /* Rounded corners */
+  --padding: 1.5rem; /* Standard padding */
+  --map-gradient: linear-gradient(135deg, #ccc, #eee); /* Map background gradient */
 }
 
+/* General Layout */
 .featured-destinations,
 .destinations-grid,
 .interactive-map {
@@ -177,8 +177,7 @@ header {
   background-color: var(--primary-color);
   margin: 1.5rem auto;
   border-radius: var(--border-radius);
-  max-width: 100%;
-  width: 90%;
+  max-width: 90%;
   transition: transform 0.3s ease;
 }
 
@@ -191,21 +190,13 @@ header {
 h2 {
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--text-color-light);
+  color: var(--text-color);
   font-size: 2rem;
 }
 
-.carousel,
-.grid {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0.5rem;
-}
-
+/* Card Styles */
 .destination-card {
-  background: var(--card-bg-color);
+  background: var(--card-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   overflow: hidden;
@@ -229,13 +220,13 @@ h2 {
 
 .destination-card h3 {
   margin: 0.8rem 0 0.4rem;
-  color: var(--text-color-dark);
+  color: var(--text-color);
   font-size: 1.25rem;
 }
 
 .destination-card p {
   padding: 0.5rem 1rem;
-  color: var(--text-color-muted);
+  color: var(--muted-color);
   font-size: 0.9rem;
 }
 
@@ -243,16 +234,15 @@ h2 {
   margin: 1rem 0;
   padding: 0.6rem 1.2rem;
   background-color: var(--primary-color);
-  color: var(--text-color-light);
+  color: var(--text-color);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  
 }
 
 .destination-card button:hover {
-  background-color: var(--primary-hover-color);
+  background-color: var(--hover-color);
   transform: scale(1.05);
 }
 
@@ -271,7 +261,7 @@ h2 {
 #map {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #ccc, #eee);
+  background: var(--map-gradient);
   border-radius: var(--border-radius);
   animation: fadeIn 1s ease-in-out;
 }
@@ -285,6 +275,17 @@ h2 {
     opacity: 1;
   }
 }
+
+/* Layout Utilities */
+.carousel,
+.grid {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+
 
 
 .footer {

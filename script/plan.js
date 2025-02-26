@@ -1,31 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.getElementById("next-button");
+    const stepsContainer = document.getElementById("dynamic-steps");
 
     nextButton.addEventListener("click", () => {
-        const destination = document.getElementById("destination").value.trim();
-        const travelType = document.getElementById("travel-type").value.trim();
-        const duration = document.getElementById("duration").value.trim();
+      const formData = {
+        destination: document.getElementById("destination")?.value,
+        travelType: document.getElementById("travel-type")?.value,
+        meals: document.getElementById("meals")?.value,
+        transportation: document.getElementById("transportation")?.value,
+        activities: Array.from(document.getElementById("activities")?.selectedOptions || []).map(opt => opt.value),
+        duration: document.getElementById("duration")?.value,
+      };
 
-        const errorMessage = document.querySelector(".error-message");
-        if (errorMessage) {
-            errorMessage.remove(); // Clear any existing error messages
-        }
-
-        // Redirect to the next page if fields are valid
-        if (destination && travelType && duration) {
-            window.location.href = "user.html"; // Replace with the actual URL of the next page
-        } else {
-            // Display an error message
-            const form = document.getElementById("trip-planner");
-            const errorDiv = document.createElement("div");
-            errorDiv.classList.add("error-message");
-            errorDiv.textContent = "⚠️ Please fill out all the fields to proceed.";
-            errorDiv.style.color = "red";
-            errorDiv.style.marginTop = "1rem";
-            form.appendChild(errorDiv);
-        }
+      if (isFormValid(formData)) {
+        renderSummary(formData);
+      } else {
+        alert("Please fill out all fields.");
+      }
     });
-});
+
+    const isFormValid = ({ destination, travelType, meals, transportation, activities, duration }) =>
+      destination && travelType && meals && transportation && activities?.length > 0 && duration;
+
+    const renderSummary = ({ destination, travelType, meals, transportation, activities, duration }) => {
+      const [destinationName, destinationPrice] = destination.split("|");
+      const [mealsType, mealsPrice] = meals.split("|");
+      const [transportationType, transportationPrice] = transportation.split("|");
+
+      const totalCost =
+        parseFloat(destinationPrice) +
+        parseFloat(mealsPrice) +
+        parseFloat(transportationPrice);
+
+      stepsContainer.innerHTML = `
+        <div class="step active">
+          <h3>Summary of Your Trip</h3>
+          <p><strong>Destination:</strong> ${destinationName}</p>
+          <p><strong>Experience:</strong> ${travelType}</p>
+          <p><strong>Meals:</strong> ${mealsType}</p>
+          <p><strong>Transportation:</strong> ${transportationType}</p>
+          <p><strong>Activities:</strong> ${activities.join(", ")}</p>
+          <p><strong>Duration:</strong> ${duration} days</p>
+          <p><strong>Total Cost:</strong> $${totalCost.toFixed(2)}</p>
+          <button id="confirm-booking">Confirm & Book</button>
+        </div>`;
+      document.getElementById("confirm-booking").addEventListener("click", () =>
+        alert("Proceeding to booking confirmation!")
+      );
+    };
+  });
 
 
 document.addEventListener('DOMContentLoaded', () => {

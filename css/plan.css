@@ -204,7 +204,7 @@ header {
 h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color:#366e1c;
+  color: #366e1c;
 }
 
 .form-grid {
@@ -239,7 +239,7 @@ input:focus {
 }
 
 .primary-btn {
-  background-color:#366e1c;
+  background-color: #366e1c;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -256,6 +256,56 @@ input:focus {
 .steps-container {
   margin-top: 2rem;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Stack inputs on smaller screens */
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust font size for headings */
+  }
+
+  label {
+    font-size: 0.9rem; /* Adjust label font size */
+  }
+
+  select,
+  input {
+    font-size: 0.9rem; /* Adjust input font size */
+    padding: 0.6rem; /* Reduce padding for inputs */
+  }
+
+  .primary-btn {
+    font-size: 0.9rem; /* Adjust button font size */
+    padding: 0.7rem 1.2rem; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 1rem; /* Reduce padding on very small screens */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Further reduce heading size */
+  }
+
+  .form-grid {
+    gap: 0.8rem; /* Reduce gap for inputs */
+  }
+
+  .primary-btn {
+    padding: 0.6rem 1rem; /* Adjust button padding further */
+  }
+}
+
 
 /* Itineraries Section */
 .suggested-itineraries {

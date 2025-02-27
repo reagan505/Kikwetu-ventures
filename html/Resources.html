@@ -33,55 +33,63 @@
 
 
 
-  <div class="container">
+  <section class="tools-section">
+    <h2 class="section-heading">Travel Tools & Resources</h2>
+    <p class="section-subheading">Plan your journey with ease using our essential tools.</p>
 
-    <!-- Budget Calculator Card -->
-    <div class="card fade-in">
-      <h3>Budget Calculator</h3>
-      <div id="budget-calculator">
-        <div class="input-group">
-          <label for="accommodation">Accommodation Cost:</label>
-          <input type="number" id="accommodation" placeholder="Enter cost in KSH">
+    <div class="container">
+      <!-- Budget Calculator Card -->
+      <div class="card infographic-card">
+        <div class="icon-wrapper">
+          <i class="fa fa-calculator"></i>
         </div>
-        <div class="input-group">
-          <label for="transport">Transport Cost:</label>
-          <input type="number" id="transport" placeholder="Enter cost in KSH">
+        <h3>Budget Calculator</h3>
+        <div id="budget-calculator">
+          <div class="input-group">
+            <label for="accommodation">Accommodation Cost (USD):</label>
+            <input type="number" id="accommodation" placeholder="Enter cost in USD">
+          </div>
+          <div class="input-group">
+            <label for="transport">Transport Cost (USD):</label>
+            <input type="number" id="transport" placeholder="Enter cost in USD">
+          </div>
+          <div class="input-group">
+            <label for="meals">Meals (USD):</label>
+            <input type="number" id="meals" placeholder="Enter cost in USD">
+          </div>
+          <div class="input-group">
+            <label for="activities">Activities (USD):</label>
+            <input type="number" id="activities" placeholder="Enter cost in USD">
+          </div>
+          <div class="input-group">
+            <label for="miscellaneous">Miscellaneous (USD):</label>
+            <input type="number" id="miscellaneous" placeholder="Enter cost in USD">
+          </div>
+          <button class="button" onclick="calculateBudget()">Calculate</button>
+          <p>Total Estimated Cost: <span id="total-cost">0</span> USD</p>
         </div>
-        <div class="input-group">
-          <label for="meals">Meals:</label>
-          <input type="number" id="meals" placeholder="Enter cost in KSH">
+      </div>
+
+      <!-- Packing Checklist Card -->
+      <div class="card infographic-card">
+        <div class="icon-wrapper">
+          <i class="fa fa-suitcase"></i>
         </div>
+        <h3>Packing Checklist</h3>
+        <ul id="checklist">
+          <li><input type="checkbox"> Passport</li>
+          <li><input type="checkbox"> Clothes</li>
+          <li><input type="checkbox"> Toiletries</li>
+          <li><input type="checkbox"> Travel Documents</li>
+        </ul>
         <div class="input-group">
-          <label for="activities">Activities:</label>
-          <input type="number" id="activities" placeholder="Enter cost in KSH">
+          <input type="text" id="new-item" placeholder="Add new item">
         </div>
-        <div class="input-group">
-          <label for="miscellaneous">Miscellaneous:</label>
-          <input type="number" id="miscellaneous" placeholder="Enter cost in KSH">
-        </div>
-        <button class="button" onclick="calculateBudget()">Calculate</button>
-        <p>Total Estimated Cost: <span id="total-cost">0</span> KSH</p>
+        <button class="button" onclick="addItem()">Add Item</button>
       </div>
     </div>
+  </section>
 
-    <!-- Packing Checklist Card -->
-    <div class="card fade-in">
-      <h3>Packing Checklist</h3>
-      <ul id="checklist">
-        <li><input type="checkbox"> Passport</li>
-        <li><input type="checkbox"> Clothes</li>
-        <li><input type="checkbox"> Toiletries</li>
-        <li><input type="checkbox"> Travel Documents</li>
-      </ul>
-      <div class="input-group">
-        <input type="text" id="new-item" placeholder="Add new item">
-      </div>
-      <button class="button" onclick="addItem()">Add Item</button>
-    </div>
-
-  </div>
-
-  </div>
 
 
   <section class="media-gallery">

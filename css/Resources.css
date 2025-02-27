@@ -145,12 +145,6 @@ h1, h2 {
   --transition-duration: 0.3s;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: var(--background-color);
-}
-
 .tools-section {
   padding: 40px 20px;
   text-align: center;
@@ -181,7 +175,7 @@ body {
   box-shadow: var(--box-shadow);
   max-width: 600px;
   padding: 20px;
-  flex: 1;
+  flex: 1 1 calc(33.33% - 40px);
   text-align: left;
   transition: transform var(--transition-duration), box-shadow var(--transition-duration);
 }
@@ -254,6 +248,63 @@ ul li {
 ul li input {
   margin-right: 10px;
 }
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .card {
+    flex: 1 1 calc(50% - 40px);
+  }
+
+  .section-heading {
+    font-size: 28px;
+  }
+
+  .section-subheading {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(100% - 40px);
+  }
+
+  .section-heading {
+    font-size: 24px;
+  }
+
+  .section-subheading {
+    font-size: 14px;
+  }
+
+  .icon-wrapper {
+    font-size: 40px;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .section-subheading {
+    font-size: 12px;
+  }
+
+  .icon-wrapper {
+    font-size: 30px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
 
 
 :root {

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/contact.css">
+  <title>Contact Form</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../assets/KIKWETU.png" alt="Brand Logo">
+    </div>
+    <nav class="nav" data-visible="false">
+      <a href="../index.html">Home</a>
+      <a href="./plan.html">Plan Your Trip</a>
+      <a href="./destination.html">Destinations</a>
+      <a href="./Resources.html">Travel Resources</a>
+      <a href="./coaching.html">Travel Coaching</a>
+      <a href="./about.html">About Us</a>
+      <a href="../html/contact.html">Contact Us</a>
+    </nav>
+    <a href="../html/sign.html" class="cta">Get Started</a>
+    <button class="burger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+
+  <section class="container">
+    <form id="contactForm" action="/action_page.php">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <p class="company-description">
+        Kikwetu vuntures is dedicated to bringing you the best tourism experiences with a blend of adventure, culture, and relaxation. Explore Africa with us for unforgettable memories!
+      </p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-link">
+          <img src="../assets/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="social-link">
+          <img src="../assets/tiktok.png" alt="TikTok" />
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-link">
+          <img src="../assets/instagram.jpg" alt="Instagram" />
+        </a>
+        <a href="https://wa.me" target="_blank" class="social-link">
+          <img src="../assets/whatsapp.jpg" alt="WhatsApp" />
+        </a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <p>Location: Nairobi, Kenya</p>
+      <p>Phone: +254 700 123 456</p>
+      <p>Email: info@aquaafrica.com</p>
+    </div>
+  </footer>
+
+  <script src="../script/contact.js"></script>
+</body>
+</html>

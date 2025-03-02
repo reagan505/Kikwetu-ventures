@@ -11,6 +11,7 @@ body {
   margin: 0;
 }
 
+/* Header Styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -65,6 +66,7 @@ header {
   transform: scaleX(1);
 }
 
+/* CTA Button */
 .cta {
   padding: 0.6rem 2rem;
   font-size: 1.1rem;
@@ -85,8 +87,8 @@ header {
 .cta:active {
   transform: scale(0.98);
 }
-/* General styles remain the same */
 
+/* Burger Menu */
 .burger {
   display: none;
   flex-direction: column;
@@ -97,7 +99,7 @@ header {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10; /* Ensure it's above the nav */
+  z-index: 10;
 }
 
 .burger span {
@@ -108,14 +110,14 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Small screen styles */
+/* Small Screen Styles */
 @media screen and (max-width: 768px) {
   .nav {
     display: none;
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    top: 80px; /* Adjust based on header height */
+    top: 80px;
     right: 0;
     background-color: #ffffff;
     padding: 1rem;
@@ -136,6 +138,7 @@ header {
     display: none;
   }
 }
+
 
 
 .image-gallery {

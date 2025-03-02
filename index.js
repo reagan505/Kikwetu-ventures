@@ -24,7 +24,8 @@ modal.addEventListener('click', (e) => {
 
 
 
-  document.querySelector('.burger').addEventListener('click', () => {
-      const nav = document.querySelector('.nav');
-      nav.classList.toggle('active');
-  });
+document.querySelector('.burger').addEventListener('click', () => {
+  const nav = document.querySelector('.nav');
+  nav.classList.toggle('active');
+});
+

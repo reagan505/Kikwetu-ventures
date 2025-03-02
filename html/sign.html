@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <link rel="stylesheet" href="../css/sign.css">
+</head>
+<body>
+  <div class="background">
+    <div class="form-container">
+      <div class="form-header">
+        <button id="showSignup" class="active">Sign Up</button>
+        <button id="showLogin">Login</button>
+      </div>
+
+      <!-- Sign-Up Form -->
+      <div id="signupForm" class="form-content visible">
+        <h1 class="form-title">Sign Up</h1>
+        <form>
+          <div class="user-input">
+            <input type="text" required id="signupUsername" placeholder="Your name">
+            <label for="signupUsername">Username</label>
+          </div>
+          <div class="user-input">
+            <input type="email" required id="signupEmail" placeholder="Your email">
+            <label for="signupEmail">Email</label>
+          </div>
+          <div class="user-input">
+            <input type="password" required id="signupPassword" placeholder="Enter password">
+            <label for="signupPassword">Password</label>
+          </div>
+          <div class="user-input">
+            <input type="password" required id="confirmSignupPassword" placeholder="Confirm your password">
+            <label for="confirmSignupPassword">Confirm Password</label>
+          </div>
+          <div class="show-password">
+            <input type="checkbox" id="toggleSignupPassword"> Show password
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginForm" class="form-content">
+        <h1 class="form-title">Login</h1>
+        <form>
+          <div class="user-input">
+            <input type="text" required id="loginUsername" placeholder="Your username or email">
+            <label for="loginUsername">Username/Email</label>
+          </div>
+          <div class="user-input">
+            <input type="password" required id="loginPassword" placeholder="Enter password">
+            <label for="loginPassword">Password</label>
+          </div>
+          <div class="show-password">
+            <input type="checkbox" id="toggleLoginPassword"> Show password
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../script/sign.js"></script>
+</body>
+</html>

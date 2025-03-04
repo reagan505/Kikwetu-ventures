@@ -147,32 +147,52 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #f7f8fa, #e9ecef);
+  padding: 3rem 2rem;
+  background-color: #f4f4f9;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
-  max-width: 600px;
+  max-width: 700px;
   margin: 2rem auto;
+  border: 2px solid #366e1c;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f4f4f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  max-width: 700px;
+  margin: 3rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .about-section h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #366e1c;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .about-section p {
   font-size: 1.2rem;
-  color: #555;
+  color: #333;
   margin-bottom: 0.8rem;
   line-height: 1.6;
 }
 
-.about-section p:last-of-type {
-  margin-bottom: 0;
-}
+
 
 /* Heading Styles */
 h2 {

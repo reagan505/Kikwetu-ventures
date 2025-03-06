@@ -37,70 +37,77 @@
 
     <main class="main-container">
         <section class="trip-form">
-            <h2>Plan Your Perfect Trip in Kibra</h2>
-            <form id="trip-planner" class="form-grid">
-                <div class="form-group">
-                    <label for="destination">Destination</label>
-                    <select id="destination" name="destination">
-                        <option value="Uweza art gallery|500">Uweza art gallery - $80</option>
-                        <option value="kibera art distict|300">kibera art distict - $80</option>
-                        <option value="Mtaa Safi|200">Mtaa Safi - $200</option>
-                        <option value="ngong_hills|500">kibera - $500</option>
-                    </select>
-                </div>
+          <h2 class="section-heading">Plan Your Perfect Trip to Kibra</h2>
+          <p class="section-subheading">Create unforgettable memories by personalizing your trip.</p>
 
-                <div class="form-group">
-                    <label for="travel-type">Experience Type</label>
-                    <select id="travel-type" name="travel-type">
-                        <option value="adventure">Adventure</option>
-                        <option value="relaxation">Relaxation</option>
-                        <option value="cultural">Cultural</option>
-                    </select>
-                </div>
+          <form id="trip-planner" class="form-grid">
+            <div class="form-group">
+              <label for="destination">Select Destination:</label>
+              <select id="destination" name="destination">
+                <option value="">-- Choose Destination --</option>
+                <option value="Uweza art gallery">Uweza Art Gallery</option>
+                <option value="kibera art district">Kibera Art District</option>
+                <option value="Mtaa Safi">Mtaa Safi</option>
+                <option value="ngong_hills">Ngong Hills</option>
+              </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="meals">Meals</label>
-                    <select id="meals" name="meals">
-                        <option value="standard|50">Standard - $50</option>
-                        <option value="premium|100">Premium - $100</option>
-                        <option value="local|70">Local Delicacies - $70</option>
-                    </select>
-                </div>
+            <div class="form-group">
+              <label for="travel-type">Select Experience:</label>
+              <select id="travel-type" name="travel-type">
+                <option value="">-- Choose Experience --</option>
+                <option value="adventure">Adventure</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="cultural">Cultural</option>
+              </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="transportation">Transportation</label>
-                    <select id="transportation" name="transportation">
-                        <option value="bus|20">Matatu - $20</option>
-                        <option value="car|100">Car - $100</option>
-                        <option value="walking|0">Walking - Free</option>
-                    </select>
-                </div>
+            <div class="form-group">
+              <label for="meals">Select Meal Plan:</label>
+              <select id="meals" name="meals">
+                <option value="">-- Choose Meal Plan --</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+                <option value="local">Local Cuisine</option>
+              </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="activities">Activities</label>
-                    <select id="activities" name="activities" multiple>
-                        <option value="community_walk">Community Walk</option>
-                        <option value="local_cuisine">Local Cuisine Tasting</option>
-                        <option value="crafts_shopping">Shopping for Crafts</option>
-                        <option value="storytelling">Storytelling Sessions</option>
-                    </select>
-                </div>
+            <div class="form-group">
+              <label for="transportation">Select Transportation:</label>
+              <select id="transportation" name="transportation">
+                <option value="">-- Choose Transportation --</option>
+                <option value="bus">Matatu</option>
+                <option value="car">Car</option>
+                <option value="walking">Walking</option>
+              </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="duration">Duration (Days)</label>
-                    <input type="number" id="duration" name="duration" min="1" max="7" required>
-                </div>
+            <div class="form-group">
+              <label for="activities">Select Activities:</label>
+              <select id="activities" name="activities" multiple>
+                <option value="community_walk">Community Walk</option>
+                <option value="local_cuisine">Local Cuisine Tasting</option>
+                <option value="crafts_shopping">Shopping for Crafts</option>
+                <option value="storytelling">Storytelling Sessions</option>
+              </select>
+            </div>
 
-                <div class="form-action">
-                    <button type="button" id="next-button" class="primary-btn">Next</button>
-                </div>
-            </form>
+            <div class="form-group">
+              <label for="duration">Trip Duration (Days):</label>
+              <input type="number" id="duration" name="duration" placeholder="Enter number of days">
+            </div>
+
+            <div class="form-action">
+              <button type="button" id="next-button" class="primary-btn">Next</button>
+            </div>
+          </form>
         </section>
 
         <section id="dynamic-steps" class="steps-container">
-            <!-- Dynamic content will be added here -->
+          <!-- Dynamic steps content will be injected here -->
         </section>
-    </main>
+      </main>
+
 
     <section class="suggested-itineraries">
         <h2>Suggested Itineraries</h2>

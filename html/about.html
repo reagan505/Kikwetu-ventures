@@ -60,95 +60,89 @@
     </button>
   </header>
 
-  <!-- Dynamic Greeting -->
-  <div class="dynamic-greeting">
-    <h2 id="greeting">Welcome to Kikwetu Ventures!</h2>
-  </div>
-  <div class="about-section">
-    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" class="about-icon">
+<!-- Dynamic Greeting -->
+<section class="dynamic-greeting">
+  <h2 id="greeting">Welcome to Kikwetu Ventures!</h2>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-icon-container">
+    <svg
+      class="about-icon"
+      width="100"
+      height="100"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="About Us Icon"
+    >
       <circle cx="50" cy="50" r="45" stroke="#366e1c" stroke-width="4" fill="none" />
-      <text x="50%" y="50%" text-anchor="middle" stroke="#366e1c" dy=".3em" font-size="16">
+      <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="16" fill="#366e1c">
         INFO
       </text>
     </svg>
+  </div>
+  <div class="about-content">
     <h1>About Us</h1>
-    <p>We are a passionate team dedicated to excellence and innovation.</p>
+    <p>
+      Our purpose is to redefine tourism in Kikwetu by offering authentic, culturally rich adventures tailored to individual preferences.
+    </p>
+    <blockquote class="about-motto">Motto: "Creating personalized experiences, making every journey unforgettable."</blockquote>
   </div>
+</section>
 
-  <h2>Our Team</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <img src="../assets/better.webp" alt="Jane">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="card-svg">
-          <circle cx="12" cy="12" r="10" fill="#366e1c" />
-          <text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em" font-size="10">
-            CEO
-          </text>
-        </svg>
-        <div class="container">
-          <h2>REAGAN</h2>
-          <p class="title">CEO & Founder</p>
-          <p>Driven by passion and dedication to lead with excellence.</p>
-          <p>reagan@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
+
+<section class="team-section">
+  <h2>Meet Our Team</h2>
+  <div class="team-row">
+    <!-- Team Member 1 -->
+    <div class="team-card">
+      <img src="../assets/better.webp" alt="Reagan - CEO">
+      <div class="card-content">
+        <h3>REAGAN</h3>
+        <p class="role">CEO & Founder</p>
+        <p class="description">Driven by passion and dedication to lead with excellence.</p>
+        <a href="mailto:reagan@example.com" class="email-link">reagan@example.com</a>
+        <button class="button">Contact</button>
       </div>
     </div>
 
-    <div class="column">
-      <div class="card">
-        <img src="../assets/Stella.jpg" alt="Mike">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="card-svg">
-          <circle cx="12" cy="12" r="10" fill="#366e1c" />
-          <text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em" font-size="10">
-            ART
-          </text>
-        </svg>
-        <div class="container">
-          <h2>STELLA</h2>
-          <p class="title">Art Director</p>
-          <p>Crafting visuals that speak louder than words.</p>
-          <p>stella@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
+    <!-- Team Member 2 -->
+    <div class="team-card">
+      <img src="../assets/Stella.jpg" alt="Stella - Art Director">
+      <div class="card-content">
+        <h3>STELLA</h3>
+        <p class="role">Art Director</p>
+        <p class="description">Crafting visuals that speak louder than words.</p>
+        <a href="mailto:stella@example.com" class="email-link">stella@example.com</a>
+        <button class="button">Contact</button>
       </div>
     </div>
 
-    <div class="column">
-      <div class="card">
-        <img src="../assets/felix.webp" alt="John">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="card-svg">
-          <circle cx="12" cy="12" r="10" fill="#366e1c" />
-          <text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em" font-size="10">
-            DSGN
-          </text>
-        </svg>
-        <div class="container">
-          <h2>FELIX</h2>
-          <p class="title">Designer</p>
-          <p>Innovating designs that inspire and captivate.</p>
-          <p>felix@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
+    <!-- Team Member 3 -->
+    <div class="team-card">
+      <img src="../assets/felix.webp" alt="Felix - Designer">
+      <div class="card-content">
+        <h3>FELIX</h3>
+        <p class="role">Designer</p>
+        <p class="description">Innovating designs that inspire and captivate.</p>
+        <a href="mailto:felix@example.com" class="email-link">felix@example.com</a>
+        <button class="button">Contact</button>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="timeline">
-    <h3>Our Journey</h3>
-    <ul>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="timeline-icon">
-          <circle cx="12" cy="12" r="10" fill="#366e1c" />
-          <text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em" font-size="10">
-            2025
-          </text>
-        </svg>
-        <p>Founded in 2025, we started with a vision to innovate.</p>
-      </li>
-    </ul>
-  </div>
+<section class="timeline-section">
+  <h3>Our Journey</h3>
+  <ul class="timeline-list">
+    <li>
+      <div class="timeline-icon">2025</div>
+      <p>Founded in 2025, we started with a vision to innovate.</p>
+    </li>
+    <!-- Add more timeline events as needed -->
+  </ul>
+</section>
+
 
 
 

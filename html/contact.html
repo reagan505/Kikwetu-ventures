@@ -5,20 +5,28 @@
   <link rel="stylesheet" href="../css/contact.css">
   <link rel="icon" type="image/png" href="./assets/favicon.webp">
   <title>Contact Form</title>
+
+  <!-- Firebase Scripts -->
+  <script type="module" src="../firebase.js"></script>
 </head>
 <body>
   <header>
     <div class="logo">
       <img src="../assets/KIKWETU.png" alt="Brand Logo">
     </div>
-    <nav class="nav" data-visible="false">
+    <nav class="nav">
       <a href="../index.html">Home</a>
       <a href="./about.html">About Us</a>
-      <a href="./plan.html">Plan Your Trip</a>
-      <a href="./destination.html">Destinations</a>
-      <a href="./Resources.html">Travel Resources</a>
-      <a href="./coaching.html">Travel Coaching</a>
-      <a href="../html/contact.html">Contact Us</a>
+      <div class="dropdown">
+        <a href="javascript:void(0)">Service Overview</a>
+        <div class="dropdown-content">
+          <a href="./plan.html">Plan Your Trip</a>
+          <a href="./Resources.html">Travel Resources</a>
+          <a href="./coaching.html">Travel Coaching</a>
+          <a href="./destination.html">Destinations</a>
+        </div>
+      </div>
+      <a href="./contact.html">Contact Us</a>
     </nav>
     <a href="../html/sign.html" class="cta">Get Started</a>
     <button class="burger" aria-label="Toggle Menu">
@@ -28,33 +36,28 @@
     </button>
   </header>
 
+  <main>
+    <form id="contactForm">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" placeholder="First Name" required>
 
-  <section class="container">
-    <form id="contactForm" action="/action_page.php">
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" placeholder="Last Name" required>
 
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <input type="text" id="country" placeholder="Country" required>
 
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" placeholder="Enter your message here..." required></textarea>
 
-      <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-      <input type="submit" value="Submit">
+        <button type="submit">Submit</button>
     </form>
-  </section>
+  </main>
 
   <footer class="footer">
     <div class="footer-left">
       <p class="company-description">
-        Kikwetu vuntures is dedicated to bringing you the best tourism experiences with a blend of adventure, culture, and relaxation. Explore Africa with us for unforgettable memories!
+        Kikwetu Ventures is where we bring your dreams to life, crafting personalized experiences that inspire and delight, ensuring every moment is tailored to create lasting memories for our users.
       </p>
       <div class="social-icons">
         <a href="https://facebook.com" target="_blank" class="social-link">
@@ -75,10 +78,12 @@
       <h4>Contact Us</h4>
       <p>Location: Nairobi, Kenya</p>
       <p>Phone: +254 700 123 456</p>
-      <p>Email: info@aquaafrica.com</p>
+      <p>Email: Kikwetuventures@gmail.com</p>
     </div>
   </footer>
 
-  <script src="../script/contact.js"></script>
+  <!-- Contact Form Script -->
+  <script type="module" src="../script/contact.js"></script>
 </body>
 </html>
+

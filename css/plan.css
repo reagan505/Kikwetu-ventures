@@ -12,13 +12,14 @@ body {
   line-height: 1.6;
 }
 
+/* Header Styles */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #ffffff;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
   border-bottom: 2px solid #f1f1f1;
 }
 
@@ -37,16 +38,19 @@ header {
   gap: 2rem;
 }
 
-.nav a {
+.nav a,
+.dropdown-content a {
   text-decoration: none;
   font-size: 1.1rem;
   color: #333;
   font-weight: 500;
+  padding: 0.8rem 1rem;
   position: relative;
-  transition: color 0.3s, padding-bottom 0.3s;
+  transition: color 0.3s ease, padding-bottom 0.3s ease;
 }
 
-.nav a::after {
+.nav a::after,
+.dropdown-content a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -58,36 +62,42 @@ header {
   transition: transform 0.3s ease;
 }
 
-.nav a:hover {
+.nav a:hover,
+.dropdown-content a:hover {
   color: #5faf58;
 }
 
-.nav a:hover::after {
+.nav a:hover::after,
+.dropdown-content a:hover::after {
   transform: scaleX(1);
 }
 
+/* CTA Button */
 .cta {
+  display: inline-block;
   padding: 0.6rem 2rem;
   font-size: 1.1rem;
-  background-color: #366e1c;
+  text-decoration: none; /* Remove underline */
+  background: linear-gradient(90deg, #366e1c, #5faf58);
   color: #ffffff;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add subtle shadow */
 }
 
 .cta:hover {
-  background-color: #5faf58;
+  background: linear-gradient(90deg, #5faf58, #366e1c);
   transform: scale(1.05);
 }
 
 .cta:active {
   transform: scale(0.98);
 }
-/* General styles remain the same */
 
+/* Burger Menu */
 .burger {
   display: none;
   flex-direction: column;
@@ -98,7 +108,7 @@ header {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10; /* Ensure it's above the nav */
+  z-index: 10;
 }
 
 .burger span {
@@ -109,24 +119,29 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Small screen styles */
+/* Small Screen Styles */
 @media screen and (max-width: 768px) {
   .nav {
     display: none;
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    top: 80px; /* Adjust based on header height */
+    top: 80px;
     right: 0;
     background-color: #ffffff;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #f1f1f1;
     z-index: 9;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
   }
 
   .nav.active {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .burger {
@@ -136,56 +151,113 @@ header {
   .cta {
     display: none;
   }
+
+  .dropdown-content a {
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+  }
 }
 
-/* Hero Section */
+/* Modern Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #333;
+  display: inline-block;
+  padding: 0.8rem 1rem; /* Match nav link padding */
+  transition: color 0.3s ease;
+}
+
+.dropdown > a:hover,
+.dropdown > a:focus {
+  color: #5faf58;
+  outline: none; /* Remove outline for aesthetic purposes */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%; /* Slight gap for better visibility */
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  z-index: 1000;
+  overflow: hidden;
+  flex-direction: column;
+  min-width: 220px;
+  animation: dropdown-fade-in 0.3s ease-out;
+}
+
+/* Dropdown Hover Effect */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: flex;
+}
+
+/* Accessibility and Visual Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-content {
+    animation: none;
+  }
+}
+
+/* Keyframes for Smooth Fade-In Animation */
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
-  background-color: #f4f4f9;
-  color:#366e1c;
+  height: 20vh; /* Reduced height by 80% */
+  background: white; /* Interchanged background color */
+  color: #366e1c; /* Interchanged text color */
+  padding: 4px; /* Reduced margin effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  margin-bottom: 0.2rem; /* Reduced margin by 80% */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: black;
+  font-size: 1.25rem;
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .nav {
-    display: none;
+  .hero h1 {
+    font-size: 2.5rem;
   }
 
-  .burger {
-    display: flex;
-  }
-
-  @media (max-width: 768px) {
-    .cta {
-      display: none;
-    }
-  }
-
-
-  .nav.active {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: absolute;
-    top: 4rem;
-    right: 2rem;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    border-radius: 8px;
+  .hero p {
+    font-size: 1rem;
   }
 }
+
+
 
 .main-container {
   max-width: 900px;
@@ -208,7 +280,7 @@ h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: center;
-  color:#366e1c;
+  color: #366e1c;
 }
 
 .form-grid {
@@ -223,10 +295,19 @@ h2 {
 }
 
 label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
   color: #444;
   margin-bottom: 0.5rem;
+}
+
+.icon {
+  color: #366e1c;
+  width: 18px;
+  height: 18px;
 }
 
 select,
@@ -241,7 +322,7 @@ input {
 
 select:focus,
 input:focus {
-  border-color:#366e1c;
+  border-color: #366e1c;
   outline: none;
 }
 
@@ -250,11 +331,15 @@ input:focus {
   padding: 0.8rem;
   font-size: 1.2rem;
   color: #fff;
-  background-color:#366e1c;
+  background-color: #366e1c;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .primary-btn:hover {
@@ -296,6 +381,7 @@ input:focus {
     padding: 0.6rem;
   }
 }
+
 
 
 

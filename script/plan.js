@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nextButton = document.getElementById("next-button");
     const stepsContainer = document.getElementById("dynamic-steps");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+
+    // Update progress bar dynamically
+    const updateProgressBar = (percentage) => {
+      progressBarFill.style.width = `${percentage}%`;
+      progressBarFill.style.transition = "width 0.5s ease-in-out";
+    };
 
     nextButton.addEventListener("click", () => {
       const formData = {
@@ -35,11 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isFormValid(formData)) {
         renderSummary(formData);
+        updateProgressBar(100);
       } else {
-        alert("Please fill out all required fields before proceeding.");
+        showToast("Please fill out all required fields before proceeding.");
+        updateProgressBar(50); // Partially completed
       }
     });
 
+    // Validate form fields
     const isFormValid = ({
       destination,
       travelType,
@@ -47,14 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
       transportation,
       activities,
       duration,
-    }) =>
-      destination &&
-      travelType &&
-      meals &&
-      transportation &&
-      activities.length > 0 &&
-      duration;
+    }) => {
+      const requiredFields = { destination, travelType, meals, transportation, duration };
+      let allValid = true;
 
+      Object.entries(requiredFields).forEach(([key, value]) => {
+        const element = document.getElementById(key);
+        if (!value) {
+          allValid = false;
+          element?.classList.add("error-highlight");
+        } else {
+          element?.classList.remove("error-highlight");
+        }
+      });
+
+      return allValid && activities.length > 0;
+    };
+
+    // Render trip summary with cost breakdown
     const renderSummary = ({
       destination,
       travelType,
@@ -69,46 +89,54 @@ document.addEventListener("DOMContentLoaded", () => {
         prices.transportation[transportation];
 
       stepsContainer.innerHTML = `
-        <div class="step active">
+        <div class="step active summary-card">
           <h3>Trip Summary</h3>
           <p><strong>Destination:</strong> ${destination}</p>
           <p><strong>Experience:</strong> ${travelType}</p>
-          <p><strong>Meal Plan:</strong> ${meals}</p>
-          <p><strong>Transportation:</strong> ${transportation}</p>
+          <p><strong>Meal Plan:</strong> ${meals} ($${prices.meals[meals]})</p>
+          <p><strong>Transportation:</strong> ${transportation} ($${prices.transportation[transportation]})</p>
           <p><strong>Activities:</strong> ${activities.join(", ")}</p>
           <p><strong>Duration:</strong> ${duration} days</p>
+          <hr>
           <p><strong>Total Cost:</strong> $${(totalCost * duration).toFixed(2)}</p>
-          <button id="confirm-booking" class="primary-btn">Confirm & Pay</button>
+          <button id="confirm-booking" class="primary-btn">Confirm Booking</button>
         </div>
       `;
 
       document
         .getElementById("confirm-booking")
-        .addEventListener("click", () => initiatePayment(totalCost * duration));
+        .addEventListener("click", () => confirmBooking(totalCost * duration));
     };
 
-    const initiatePayment = (amount) => {
-      const intasend = new window.IntaSend({
-        publicAPIKey: "ISPubKey_test_8aacd2a6-ba3b-453a-913c-246fd6300376",
-        live: false,
-      });
+    // Confirm booking with a toast notification
+    const confirmBooking = (amount) => {
+      showToast(
+        `Your booking has been confirmed! Total amount: $${amount.toFixed(2)}. Enjoy your trip!`,
+        "success"
+      );
+      console.log("Booking confirmed. Total amount:", amount);
+    };
 
-      intasend.checkout({
-        amount: (amount * 100).toFixed(0), // Convert to cents
-        currency: "USD",
-        email: "customer@example.com",
-        description: "Kibra Trip Payment",
-        onComplete: (results) => {
-          console.log("Payment successful", results);
-          alert("Payment successful! Enjoy your trip.");
-        },
-        onError: (error) => {
-          console.error("Payment failed", error);
-          alert("Payment failed. Please try again.");
-        },
-      });
+    // Display a toast notification
+    const showToast = (message, type = "info") => {
+      const toast = document.createElement("div");
+      toast.className = `toast toast-${type}`;
+      toast.innerText = message;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transition = "opacity 0.5s ease";
+      }, 3000);
+
+      setTimeout(() => {
+        toast.remove();
+      }, 3500);
     };
   });
+
+
+
 
 
 

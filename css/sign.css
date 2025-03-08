@@ -1,43 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #366e1c, #5faf58);
+  background: linear-gradient(135deg, #366e1c, #5faf58);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  animation: fadeIn 1.5s ease;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
+    transform: scale(0.95);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 .background {
   background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 420px;
+  max-width: 450px;
   padding: 2rem;
-  transform: translateY(20px);
+  transform: translateY(30px);
   animation: slideUp 0.8s ease forwards;
 }
 
 @keyframes slideUp {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -46,21 +54,23 @@ body {
 .form-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-header button {
   flex: 1;
-  padding: 0.75rem;
+  padding: 0.8rem;
   background: none;
   font-size: 1rem;
   font-weight: 600;
   color: #666;
   border: none;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
   transition: color 0.3s, border-bottom 0.3s;
 }
 
+.form-header button:hover,
 .form-header button.active {
   color: #366e1c;
   border-bottom: 2px solid #366e1c;
@@ -72,15 +82,17 @@ body {
 
 .form-content.visible {
   display: block;
-  animation: fadeContent 0.6s ease;
+  animation: fadeContent 0.5s ease-in-out;
 }
 
 @keyframes fadeContent {
-  from {
+  0% {
     opacity: 0;
+    transform: translateY(10px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -93,17 +105,24 @@ body {
   width: 100%;
   padding: 0.75rem 1rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.user-input input:focus {
+  border-color: #366e1c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(54, 110, 28, 0.4);
 }
 
 .user-input label {
   position: absolute;
-  top: -0.5rem;
+  top: -0.6rem;
   left: 1rem;
   background-color: #ffffff;
   font-size: 0.85rem;
-  padding: 0 0.25rem;
+  padding: 0 0.3rem;
   color: #999;
 }
 
@@ -115,17 +134,38 @@ body {
 
 .btn {
   width: 100%;
-  padding: 0.75rem;
-  background: #366e1c;
+  padding: 0.9rem;
+  background: linear-gradient(to right, #366e1c, #4b9b3c);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-  background: #5faf58;
+  background: linear-gradient(to right, #5faf58, #6fcf76);
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .background {
+    padding: 1.5rem;
+  }
+
+  .form-header button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
 }
 

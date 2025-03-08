@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Page</title>
+  <title>Sign Up and Login</title>
   <link rel="stylesheet" href="../css/sign.css">
 </head>
 <body>
@@ -30,13 +30,6 @@
             <input type="password" required id="signupPassword" placeholder="Enter password">
             <label for="signupPassword">Password</label>
           </div>
-          <div class="user-input">
-            <input type="password" required id="confirmSignupPassword" placeholder="Confirm your password">
-            <label for="confirmSignupPassword">Confirm Password</label>
-          </div>
-          <div class="show-password">
-            <input type="checkbox" id="toggleSignupPassword"> Show password
-          </div>
           <button type="submit" class="btn">Sign Up</button>
         </form>
       </div>
@@ -46,21 +39,28 @@
         <h1 class="form-title">Login</h1>
         <form>
           <div class="user-input">
-            <input type="text" required id="loginUsername" placeholder="Your username or email">
-            <label for="loginUsername">Username/Email</label>
+            <input type="email" required id="loginEmail" placeholder="Your email">
+            <label for="loginEmail">Email</label>
           </div>
           <div class="user-input">
             <input type="password" required id="loginPassword" placeholder="Enter password">
             <label for="loginPassword">Password</label>
-          </div>
-          <div class="show-password">
-            <input type="checkbox" id="toggleLoginPassword"> Show password
           </div>
           <button type="submit" class="btn">Login</button>
         </form>
       </div>
     </div>
   </div>
-  <script src="../script/sign.js"></script>
+
+  <!-- Include Firebase SDK -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js"></script>
+
+  <!-- Include Firebase Configuration -->
+  <script type="module" src="../script/firebase.js"></script>
+
+  <!-- Include Sign-Up/Sign-In Script -->
+  <script type="module" src="../script/sign.js"></script>
 </body>
 </html>
+

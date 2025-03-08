@@ -1,32 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
+import { db } from "./firebase.js";
+import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+// Get the form element
+const contactForm = document.getElementById("contactForm");
 
-    const successMessage = document.createElement("p");
-    successMessage.textContent = "Thank you for your message! We will get back to you soon.";
-    successMessage.style.color = "#366e1c";
-    successMessage.style.fontWeight = "bold";
-    successMessage.style.textAlign = "center";
-    successMessage.style.marginTop = "20px";
+// Add an event listener for form submission
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault(); // Prevent default form submission behavior
 
-    form.appendChild(successMessage);
+  // Get form field values
+  const firstname = document.getElementById("firstname").value.trim();
+  const lastname = document.getElementById("lastname").value.trim();
+  const country = document.getElementById("country").value.trim();
+  const subject = document.getElementById("subject").value.trim();
 
-    setTimeout(() => {
-      successMessage.remove();
-    }, 5000);
-  });
+  // Validate fields
+  if (!firstname || !lastname || !country || !subject) {
+    alert("Please fill out all fields before submitting.");
+    return;
+  }
+
+  try {
+    // Add a new document to the "contacts" collection in Firestore
+    await addDoc(collection(db, "contacts"), {
+      firstname,
+      lastname,
+      country,
+      subject,
+      timestamp: serverTimestamp(), // Use Firestore server timestamp
+    });
+
+    alert("Message sent successfully!");
+    contactForm.reset(); // Clear the form
+  } catch (error) {
+    console.error("Error saving message: ", error);
+    alert("Error sending message. Please check your internet connection or try again later.");
+  }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav");
+// Handle mobile navigation toggle
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav");
 
+if (burger && nav) {
   burger.addEventListener("click", () => {
-    const isVisible = nav.getAttribute("data-visible") === "true";
-    nav.setAttribute("data-visible", !isVisible);
-    burger.classList.toggle("active");
+    const isVisible = nav.classList.contains("active");
+    nav.classList.toggle("active", !isVisible);
+    burger.classList.toggle("active", !isVisible);
   });
-});
+} else {
+  console.error("Burger or Nav element is missing in the DOM.");
+}
 

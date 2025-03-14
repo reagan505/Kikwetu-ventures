@@ -224,11 +224,12 @@ main {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(135deg, #ffffff, #ffffff);
+  background: url('../assets/back\ img.jpg') no-repeat center center/cover;
 }
 
 form {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   border: 1px solid #5faf58;
   border-radius: 15px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
@@ -295,6 +296,7 @@ form button:hover {
 
 
 
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -317,8 +319,8 @@ form button:hover {
 }
 
 .social-link img {
-  width: 36px;
-  height: 36px;
+  width: 28.8px; /* Reduced by 20% from 36px */
+  height: 28.8px; /* Reduced by 20% from 36px */
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
@@ -337,14 +339,14 @@ form button:hover {
 
 .footer-right h4 {
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1.105rem; /* Reduced by 15% from 1.3rem */
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .footer-right p {
   margin: 0.7rem 0;
-  font-size: 1rem;
+  font-size: 0.85rem; /* Reduced by 15% from 1rem */
   line-height: 1.6;
 }
 

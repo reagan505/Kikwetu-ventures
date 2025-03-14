@@ -6,7 +6,6 @@
     <title>Plan With Us</title>
     <link rel="stylesheet" href="../css/plan.css">
     <link rel="icon" type="image/png" href="./assets/favicon.webp">
-    <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
 </head>
 <body>
     <header>
@@ -14,43 +13,39 @@
             <img src="../assets/KIKWETU.png" alt="Kikwetu Ventures Logo">
         </div>
         <nav class="nav">
-          <a href="../index.html">Home</a>
-          <a href="./about.html">About Us</a>
-
-      <!-- Dropdown for Services -->
-<div class="dropdown">
-  <a href="javascript:void(0)">Service Overview</a>
-  <div class="dropdown-content">
-    <a href="./plan.html">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
-        <path d="M9 21h6v-2H9v2zM4 6h16v11H4V6zm0-4v2h16V2H4zm6 9h4v2h-4v-2z" fill="#5faf58"></path>
-      </svg>
-      Plan Your Trip
-    </a>
-    <a href="./Resources.html">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
-        <path d="M3 4h18v2H3V4zm0 4h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm10 8h2v2h-2v-2z" fill="#5faf58"></path>
-      </svg>
-      Travel Resources
-    </a>
-    <a href="./coaching.html">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
-        <path d="M12 2a5 5 0 110 10 5 5 0 010-10zM6 13h12a6 6 0 016 6v1H0v-1a6 6 0 016-6z" fill="#5faf58"></path>
-      </svg>
-      Travel Coaching
-    </a>
-    <a href="./destination.html">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
-        <path d="M12 2a8 8 0 018 8c0 4-6 11-8 11s-8-7-8-11a8 8 0 018-8zm0 4a4 4 0 100 8 4 4 0 000-8z" fill="#5faf58"></path>
-      </svg>
-      Destinations
-    </a>
-  </div>
-</div>
-
-
-
-          <a href="./contact.html">Contact Us</a>
+            <a href="../index.html">Home</a>
+            <a href="./about.html">About Us</a>
+            <!-- Dropdown for Services -->
+            <div class="dropdown">
+                <a href="javascript:void(0)">Service Overview</a>
+                <div class="dropdown-content">
+                    <a href="./plan.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
+                            <path d="M9 21h6v-2H9v2zM4 6h16v11H4V6zm0-4v2h16V2H4zm6 9h4v2h-4v-2z" fill="#5faf58"></path>
+                        </svg>
+                        Plan Your Trip
+                    </a>
+                    <a href="./Resources.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
+                            <path d="M3 4h18v2H3V4zm0 4h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm10 8h2v2h-2v-2z" fill="#5faf58"></path>
+                        </svg>
+                        Travel Resources
+                    </a>
+                    <a href="./coaching.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
+                            <path d="M12 2a5 5 0 110 10 5 5 0 010-10zM6 13h12a6 6 0 016 6v1H0v-1a6 6 0 016-6z" fill="#5faf58"></path>
+                        </svg>
+                        Travel Coaching
+                    </a>
+                    <a href="./destination.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon">
+                            <path d="M12 2a8 8 0 018 8c0 4-6 11-8 11s-8-7-8-11a8 8 0 018-8zm0 4a4 4 0 100 8 4 4 0 000-8z" fill="#5faf58"></path>
+                        </svg>
+                        Destinations
+                    </a>
+                </div>
+            </div>
+            <a href="./contact.html">Contact Us</a>
         </nav>
         <a href="../html/sign.html" class="cta">Get Started</a>
         <button class="burger" aria-label="Toggle Menu">
@@ -63,94 +58,116 @@
     <div class="hero">
         <h1>Plan Your Perfect Trip</h1>
         <p>Let us help you create unforgettable memories.</p>
-      </div>
+    </div>
 
-      <main class="main-container">
+    <main class="main-container">
         <section class="trip-form">
-          <h2 class="section-heading">Plan Your Perfect Trip to Kibra</h2>
-          <p class="section-subheading">
-            Create unforgettable memories by personalizing your trip.
-          </p>
-          <div class="progress-bar">
-            <div class="progress-bar-fill" id="progress-bar-fill"></div>
-          </div>
-
-          <form id="trip-planner" class="form-grid" aria-labelledby="trip-planner">
-            <div class="form-group">
-              <label for="destination">Select Destination:</label>
-              <select id="destination" name="destination">
-                <option value="">-- Choose Destination --</option>
-                <option value="Uweza art gallery">Uweza Art Gallery</option>
-                <option value="kibera art district">Kibera Art District</option>
-                <option value="Mtaa Safi">Mtaa Safi</option>
-                <option value="ngong_hills">Ngong Hills</option>
-              </select>
+            <h2 class="section-heading">Plan Your Perfect Trip to Kibra</h2>
+            <p class="section-subheading">
+                Create unforgettable memories by personalizing your trip.
+            </p>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
             </div>
 
-            <div class="form-group">
-              <label for="travel-type">Select Experience:</label>
-              <select id="travel-type" name="travel-type">
-                <option value="">-- Choose Experience --</option>
-                <option value="adventure">Adventure</option>
-                <option value="relaxation">Relaxation</option>
-                <option value="cultural">Cultural</option>
-              </select>
-            </div>
+            <form id="trip-planner" class="form-grid" aria-labelledby="trip-planner">
+                <div class="form-group">
+                    <label for="destination">
+                        <span class="icon">📍</span> Select Destination:
+                    </label>
+                    <select id="destination" name="destination" required>
+                        <option value="" disabled selected>-- Choose Destination --</option>
+                        <option value="Uweza art gallery">Uweza Art Gallery</option>
+                        <option value="kibera art district">Kibera Art District</option>
+                        <option value="Mtaa Safi">Mtaa Safi</option>
+                        <option value="ngong_hills">Ngong Hills</option>
+                    </select>
+                    <span class="error-message" id="destination-error"></span>
+                </div>
 
-            <div class="form-group">
-              <label for="meals">Select Meal Plan:</label>
-              <select id="meals" name="meals">
-                <option value="">-- Choose Meal Plan --</option>
-                <option value="standard">Standard</option>
-                <option value="premium">Premium</option>
-                <option value="local">Local Cuisine</option>
-              </select>
-            </div>
+                <div class="form-group">
+                    <label for="travel-type">
+                        <span class="icon">🎭</span> Select Experience:
+                    </label>
+                    <select id="travel-type" name="travel-type" required>
+                        <option value="" disabled selected>-- Choose Experience --</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="cultural">Cultural</option>
+                    </select>
+                    <span class="error-message" id="travel-type-error"></span>
+                </div>
 
-            <div class="form-group">
-              <label for="transportation">Select Transportation:</label>
-              <select id="transportation" name="transportation">
-                <option value="">-- Choose Transportation --</option>
-                <option value="bus">Matatu</option>
-                <option value="car">Car</option>
-                <option value="walking">Walking</option>
-              </select>
-            </div>
+                <div class="form-group">
+                    <label for="meals">
+                        <span class="icon">🍽️</span> Select Meal Plan:
+                    </label>
+                    <select id="meals" name="meals" required>
+                        <option value="" disabled selected>-- Choose Meal Plan --</option>
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                        <option value="local">Local Cuisine</option>
+                    </select>
+                    <span class="error-message" id="meals-error"></span>
+                </div>
 
-            <div class="form-group">
-              <label for="activities">Select Activities:</label>
-              <select id="activities" name="activities" multiple>
-                <option value="community_walk">Community Walk</option>
-                <option value="local_cuisine">Local Cuisine Tasting</option>
-                <option value="crafts_shopping">Shopping for Crafts</option>
-                <option value="storytelling">Storytelling Sessions</option>
-              </select>
-            </div>
+                <div class="form-group">
+                    <label for="transportation">
+                        <span class="icon">🚗</span> Select Transportation:
+                    </label>
+                    <select id="transportation" name="transportation" required>
+                        <option value="" disabled selected>-- Choose Transportation --</option>
+                        <option value="bus">Matatu</option>
+                        <option value="car">Car</option>
+                        <option value="walking">Walking</option>
+                    </select>
+                    <span class="error-message" id="transportation-error"></span>
+                </div>
 
-            <div class="form-group">
-              <label for="duration">Trip Duration (Days):</label>
-              <input
-                type="number"
-                id="duration"
-                name="duration"
-                placeholder="Enter number of days"
-                min="1"
-              />
-            </div>
+                <div class="form-group">
+                    <label for="activities">
+                        <span class="icon">🎨</span> Select Activities:
+                    </label>
+                    <select id="activities" name="activities" multiple required>
+                        <option value="community_walk">Community Walk</option>
+                        <option value="local_cuisine">Local Cuisine Tasting</option>
+                        <option value="crafts_shopping">Shopping for Crafts</option>
+                        <option value="storytelling">Storytelling Sessions</option>
+                    </select>
+                    <small>Hold Ctrl (or Cmd on Mac) to select multiple activities.</small>
+                    <span class="error-message" id="activities-error"></span>
+                </div>
 
-            <div class="form-action">
-              <button type="button" id="next-button" class="primary-btn">
-                Next
-              </button>
-            </div>
-          </form>
+                <div class="form-group">
+                    <label for="duration">
+                        <span class="icon">⏳</span> Trip Duration (Days):
+                    </label>
+                    <input
+                        type="number"
+                        id="duration"
+                        name="duration"
+                        placeholder="Enter number of days"
+                        min="1"
+                        required
+                    />
+                    <span class="error-message" id="duration-error"></span>
+                </div>
+
+                <div class="form-action">
+                    <button type="button" id="next-button" class="primary-btn">
+                        <span class="icon">➡️</span> Next
+                    </button>
+                    <button type="button" id="pay-button" class="primary-btn">
+                        <span class="icon">💳</span> Pay Now
+                    </button>
+                </div>
+            </form>
         </section>
 
         <section id="dynamic-steps" class="steps-container">
-          <!-- Dynamic steps content will be injected here -->
+            <!-- Dynamic steps content will be injected here -->
         </section>
-      </main>
-
+    </main>
 
 
     <section class="suggested-itineraries">
@@ -195,11 +212,141 @@
         <div class="footer-right">
             <h4>Contact Us</h4>
             <p>Location: Nairobi, Kenya</p>
-            <p>Phone: +254 700 123 456</p>
+            <p>Phone: +254 0799744638</p>
             <p>Email: Kikwetuventuers@gmail.com</p>
-        </div>
+          </div>
     </footer>
 
-    <script src="../script/plan.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tripForm = document.getElementById("trip-planner");
+            const nextButton = document.getElementById("next-button");
+            const progressBarFill = document.getElementById("progress-bar-fill");
+            const stepsContainer = document.getElementById("dynamic-steps");
+            let currentStep = 0;
+
+            // Sample cost data for calculations
+            const costData = {
+                destination: { "Uweza art gallery": 2000, "kibera art district": 3000, "Mtaa Safi": 2500, "ngong_hills": 4000 },
+                experience: { adventure: 1000, relaxation: 800, cultural: 1200 },
+                meals: { standard: 500, premium: 1000, local: 700 },
+                transportation: { bus: 300, car: 1000, walking: 0 },
+                activities: { community_walk: 500, local_cuisine: 800, crafts_shopping: 600, storytelling: 700 },
+            };
+
+            function calculateTotalCost() {
+                const destination = tripForm.destination.value;
+                const experience = tripForm["travel-type"].value;
+                const meals = tripForm.meals.value;
+                const transportation = tripForm.transportation.value;
+                const activities = Array.from(tripForm.activities.selectedOptions).map(opt => opt.value);
+                const duration = parseInt(tripForm.duration.value) || 0;
+
+                let totalCost = 0;
+
+                if (destination) totalCost += costData.destination[destination];
+                if (experience) totalCost += costData.experience[experience];
+                if (meals) totalCost += costData.meals[meals];
+                if (transportation) totalCost += costData.transportation[transportation];
+                if (activities.length) {
+                    totalCost += activities.reduce((sum, activity) => sum + costData.activities[activity], 0);
+                }
+                totalCost *= duration;
+
+                return totalCost;
+            }
+
+            function updateProgressBar() {
+                const steps = 4; // Example total steps
+                progressBarFill.style.width = `${((currentStep + 1) / steps) * 100}%`;
+            }
+
+            function showSummary() {
+                const totalCost = calculateTotalCost();
+                stepsContainer.innerHTML = `
+                    <div class="summary">
+                        <h3>Trip Summary</h3>
+                        <p><strong>Total Cost:</strong> KES ${totalCost}</p>
+                        <button id="proceed-to-payment" class="primary-btn">Proceed to Payment</button>
+                    </div>
+                `;
+
+                const proceedButton = document.getElementById("proceed-to-payment");
+                proceedButton.addEventListener("click", async () => {
+                    await processPayment(totalCost);
+                });
+            }
+
+            async function processPayment(totalCost) {
+                try {
+                    const response = await fetch("http://localhost:5000/submit-order", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            amount: totalCost,
+                            description: "Custom Trip to Kibra",
+                            currency: "KES",
+                            callback_url: "https://your-website.com/payment-success",
+                        }),
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.redirect_url) {
+                        window.location.href = data.redirect_url; // Redirect user to payment URL
+                    } else {
+                        console.error("Payment initiation failed", data);
+                        alert("Failed to initiate payment. Please try again.");
+                    }
+                } catch (error) {
+                    console.error("Error processing payment", error);
+                    alert("An error occurred while processing payment. Please try again later.");
+                }
+            }
+
+            nextButton.addEventListener("click", () => {
+                if (currentStep === 0) {
+                    const isValid = validateForm();
+                    if (!isValid) {
+                        alert("Please fill out all required fields.");
+                        return;
+                    }
+
+                    currentStep++;
+                    updateProgressBar();
+                    showSummary();
+                }
+            });
+
+            function validateForm() {
+                const requiredFields = [
+                    tripForm.destination,
+                    tripForm["travel-type"],
+                    tripForm.meals,
+                    tripForm.transportation,
+                    tripForm.duration,
+                ];
+
+                return requiredFields.every(field => field.value.trim() !== "");
+            }
+        });
+
+        // Burger menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav');
+
+            if (burger && nav) {
+                burger.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                    burger.classList.toggle('toggle');
+                });
+            } else {
+                console.error("Elements with classes '.burger' or '.nav' are missing in the HTML.");
+            }
+        });
+    </script>
 </body>
 </html>

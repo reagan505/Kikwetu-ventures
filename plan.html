@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan With Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-grid {
+            display: grid;
+            gap: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-action {
+            text-align: center;
+        }
+        .primary-btn {
+            background-color: #5faf58;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            height: 80%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Plan Your Perfect Trip</h1>
+        <p>Let us help you create unforgettable memories.</p>
+    </div>
+
+    <main class="main-container">
+        <section class="trip-form">
+            <h2>Plan Your Perfect Trip to Kibra</h2>
+            <p>Create unforgettable memories by personalizing your trip.</p>
+
+            <form id="trip-planner" class="form-grid">
+                <div class="form-group">
+                    <label for="destination">Select Destination:</label>
+                    <select id="destination" name="destination">
+                        <option value="">-- Choose Destination --</option>
+                        <option value="Uweza art gallery">Uweza Art Gallery</option>
+                        <option value="kibera art district">Kibera Art District</option>
+                        <option value="Mtaa Safi">Mtaa Safi</option>
+                        <option value="ngong_hills">Ngong Hills</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="travel-type">Select Experience:</label>
+                    <select id="travel-type" name="travel-type">
+                        <option value="">-- Choose Experience --</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="cultural">Cultural</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="meals">Select Meal Plan:</label>
+                    <select id="meals" name="meals">
+                        <option value="">-- Choose Meal Plan --</option>
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                        <option value="local">Local Cuisine</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transportation">Select Transportation:</label>
+                    <select id="transportation" name="transportation">
+                        <option value="">-- Choose Transportation --</option>
+                        <option value="bus">Matatu</option>
+                        <option value="car">Car</option>
+                        <option value="walking">Walking</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="activities">Select Activities:</label>
+                    <select id="activities" name="activities" multiple>
+                        <option value="community_walk">Community Walk</option>
+                        <option value="local_cuisine">Local Cuisine Tasting</option>
+                        <option value="crafts_shopping">Shopping for Crafts</option>
+                        <option value="storytelling">Storytelling Sessions</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Trip Duration (Days):</label>
+                    <input type="number" id="duration" name="duration" placeholder="Enter number of days" min="1" />
+                </div>
+
+                <div class="form-action">
+                    <button type="button" id="next-button" class="primary-btn">Next</button>
+                    <button type="button" id="payment-button" class="primary-btn" style="display: none;">Proceed to Payment</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <iframe id="payment-iframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const nextButton = document.getElementById('next-button');
+        const paymentButton = document.getElementById('payment-button');
+        const tripForm = document.getElementById('trip-planner');
+        const modal = document.getElementById('payment-modal');
+        const iframe = document.getElementById('payment-iframe');
+
+        nextButton.addEventListener('click', () => {
+            const formData = new FormData(tripForm);
+            const tripDetails = {
+                destination: formData.get('destination'),
+                travelType: formData.get('travel-type'),
+                meals: formData.get('meals'),
+                transportation: formData.get('transportation'),
+                activities: formData.getAll('activities'),
+                duration: formData.get('duration')
+            };
+
+            if (!tripDetails.destination || !tripDetails.duration) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const basePrice = 1000;
+            const activityPrice = tripDetails.activities.length * 500;
+            const durationPrice = tripDetails.duration * 1000;
+            const totalAmount = basePrice + activityPrice + durationPrice;
+
+            alert(`Your trip cost is KES ${totalAmount}. Proceed to payment?`);
+
+            nextButton.style.display = 'none';
+            paymentButton.style.display = 'block';
+            paymentButton.dataset.amount = totalAmount;
+        });
+
+        paymentButton.addEventListener('click', () => {
+            const amount = paymentButton.dataset.amount;
+            const redirectUrl = `https://pay.pesapal.com/iframe/PesapalIframe3/Index?amount=${amount}`;
+
+            iframe.src = redirectUrl;
+            modal.style.display = 'flex';
+        });
+
+        function closeModal() {
+            modal.style.display = 'none';
+            iframe.src = '';
+        }
+    </script>
+</body>
+</html>

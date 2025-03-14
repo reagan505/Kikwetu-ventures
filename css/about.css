@@ -11,7 +11,6 @@ body {
   margin: 0;
 }
 
-
 /* Header Styles */
 header {
   display: flex;
@@ -220,10 +219,6 @@ header {
   }
 }
 
-
-
-
-
 /* Dynamic Greeting */
 .dynamic-greeting {
   background:color(srgb rgb(255, 255, 255) green rgb(255, 255, 255));
@@ -319,7 +314,7 @@ header {
 /* Responsive Design */
 @media (max-width: 768px) {
   .dynamic-greeting h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .about-section {
@@ -327,15 +322,14 @@ header {
   }
 
   .about-section h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .about-section p,
   .about-motto {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 }
-
 
 /* Team Section */
 .team-section {
@@ -526,8 +520,8 @@ header {
 }
 
 .social-link img {
-  width: 36px;
-  height: 36px;
+  width: 28.8px; /* Reduced by 20% from 36px */
+  height: 28.8px; /* Reduced by 20% from 36px */
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
@@ -546,14 +540,14 @@ header {
 
 .footer-right h4 {
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1.105rem; /* Reduced by 15% from 1.3rem */
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .footer-right p {
   margin: 0.7rem 0;
-  font-size: 1rem;
+  font-size: 0.85rem; /* Reduced by 15% from 1rem */
   line-height: 1.6;
 }
 

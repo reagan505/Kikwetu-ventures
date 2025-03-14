@@ -361,6 +361,26 @@ h2 {
   }
 }
 
+.plan-now-button {
+  background-color: #366e1c;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.plan-now-button:hover {
+  background-color: #2b5416;
+}
+
+.plan-now-button svg {
+  fill: white;
+}
+
 /* Layout Utilities */
 .carousel,
 .grid {
@@ -375,86 +395,64 @@ h2 {
 
 .footer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   background-color: #366e1c;
   color: white;
-  padding: 1.5rem;
-  gap: 1rem;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .footer-left {
-  flex: 1;
   max-width: 45%;
+  padding: 0 1rem;
 }
 
 .social-icons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .social-link img {
-  width: 32px;
-  height: 32px;
+  width: 28.8px; /* Reduced by 20% from 36px */
+  height: 28.8px; /* Reduced by 20% from 36px */
   border-radius: 50%;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-link img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+  transform: scale(1.2);
+  filter: brightness(1.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-right {
-  flex: 1;
   text-align: right;
+  padding: 0 1rem;
 }
 
 .footer-right h4 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.105rem; /* Reduced by 15% from 1.3rem */
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .footer-right p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
+  margin: 0.7rem 0;
+  font-size: 0.85rem; /* Reduced by 15% from 1rem */
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-  }
-
-  .nav {
-    gap: 1rem;
-  }
-
   .footer {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     text-align: center;
   }
 
   .footer-left, .footer-right {
     max-width: 100%;
-    flex: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .cta {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .destination-card {
-    width: 90%;
-  }
-
-  #map {
-    height: 200px;
   }
 }

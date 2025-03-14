@@ -149,3 +149,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+
+    document.querySelectorAll(".rating").forEach((ratingElement) => {
+      const stars = ratingElement.querySelectorAll("span");
+
+      stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          // Reset all stars
+          stars.forEach((s) => s.classList.remove("active"));
+          // Highlight selected stars
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.add("active");
+          }
+        });
+      });
+    });
+

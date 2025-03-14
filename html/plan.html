@@ -157,7 +157,7 @@
                     <button type="button" id="next-button" class="primary-btn">
                         <span class="icon">➡️</span> Next
                     </button>
-                    <button type="button" id="pay-button" class="primary-btn">
+                    <button type="button" id="pay-button" class="primary-btn" style="display: none;">
                         <span class="icon">💳</span> Pay Now
                     </button>
                 </div>
@@ -168,7 +168,6 @@
             <!-- Dynamic steps content will be injected here -->
         </section>
     </main>
-
 
     <section class="suggested-itineraries">
         <h2>Suggested Itineraries</h2>
@@ -214,13 +213,14 @@
             <p>Location: Nairobi, Kenya</p>
             <p>Phone: +254 0799744638</p>
             <p>Email: Kikwetuventuers@gmail.com</p>
-          </div>
+        </div>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const tripForm = document.getElementById("trip-planner");
             const nextButton = document.getElementById("next-button");
+            const payButton = document.getElementById("pay-button");
             const progressBarFill = document.getElementById("progress-bar-fill");
             const stepsContainer = document.getElementById("dynamic-steps");
             let currentStep = 0;
@@ -243,7 +243,6 @@
                 const duration = parseInt(tripForm.duration.value) || 0;
 
                 let totalCost = 0;
-
                 if (destination) totalCost += costData.destination[destination];
                 if (experience) totalCost += costData.experience[experience];
                 if (meals) totalCost += costData.meals[meals];
@@ -252,7 +251,6 @@
                     totalCost += activities.reduce((sum, activity) => sum + costData.activities[activity], 0);
                 }
                 totalCost *= duration;
-
                 return totalCost;
             }
 
@@ -267,35 +265,39 @@
                     <div class="summary">
                         <h3>Trip Summary</h3>
                         <p><strong>Total Cost:</strong> KES ${totalCost}</p>
-                        <button id="proceed-to-payment" class="primary-btn">Proceed to Payment</button>
+                        <p>Click "Pay Now" to proceed with payment.</p>
                     </div>
                 `;
-
-                const proceedButton = document.getElementById("proceed-to-payment");
-                proceedButton.addEventListener("click", async () => {
-                    await processPayment(totalCost);
-                });
+                payButton.style.display = "block"; // Show Pay Now button
+                nextButton.style.display = "none"; // Hide Next button
             }
 
             async function processPayment(totalCost) {
+                const tripDetails = {
+                    destination: tripForm.destination.value,
+                    experience: tripForm["travel-type"].value,
+                    meals: tripForm.meals.value,
+                    transportation: tripForm.transportation.value,
+                    activities: Array.from(tripForm.activities.selectedOptions).map(opt => opt.value),
+                    duration: tripForm.duration.value,
+                    amount: totalCost,
+                    // Add user input if available (e.g., email, phone)
+                    email: "customer@example.com", // Replace with dynamic input if added to form
+                    phone: "+254799744638" // Replace with dynamic input if added to form
+                };
+
                 try {
-                    const response = await fetch("http://localhost:5000/submit-order", {
+                    const response = await fetch("http://localhost:3000/submit-order", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
                         },
-                        body: JSON.stringify({
-                            amount: totalCost,
-                            description: "Custom Trip to Kibra",
-                            currency: "KES",
-                            callback_url: "https://your-website.com/payment-success",
-                        }),
+                        body: JSON.stringify(tripDetails),
                     });
 
                     const data = await response.json();
-
                     if (response.ok && data.redirect_url) {
-                        window.location.href = data.redirect_url; // Redirect user to payment URL
+                        window.location.href = data.redirect_url; // Redirect to Pesapal payment page
                     } else {
                         console.error("Payment initiation failed", data);
                         alert("Failed to initiate payment. Please try again.");
@@ -313,11 +315,15 @@
                         alert("Please fill out all required fields.");
                         return;
                     }
-
                     currentStep++;
                     updateProgressBar();
                     showSummary();
                 }
+            });
+
+            payButton.addEventListener("click", () => {
+                const totalCost = calculateTotalCost();
+                processPayment(totalCost);
             });
 
             function validateForm() {
@@ -328,24 +334,15 @@
                     tripForm.transportation,
                     tripForm.duration,
                 ];
-
                 return requiredFields.every(field => field.value.trim() !== "");
             }
         });
 
         // Burger menu toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const burger = document.querySelector('.burger');
+        document.querySelector('.burger').addEventListener('click', () => {
             const nav = document.querySelector('.nav');
-
-            if (burger && nav) {
-                burger.addEventListener('click', () => {
-                    nav.classList.toggle('active');
-                    burger.classList.toggle('toggle');
-                });
-            } else {
-                console.error("Elements with classes '.burger' or '.nav' are missing in the HTML.");
-            }
+            nav.classList.toggle('active');
+            document.querySelector('.burger').classList.toggle('toggle');
         });
     </script>
 </body>
